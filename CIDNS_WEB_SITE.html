@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CIDNS - IT Consulting Company">
+  <title>CIDNS - Cybersecurity Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0D1B2A;
+      --secondary-color: #1B263B;
+      --accent-color: #4DA3FF;
+      --light-color: #F1FAEE;
+    }
+    body {margin:0;font-family:'Poppins', sans-serif;background:linear-gradient(to bottom right,#1B263B,#0D1B2A);color:var(--light-color);line-height:1.6;}
+    header {background-image:url('images/ruban_sc.jpeg');background-size:cover;background-position:center;padding:40px 20px;display:flex;align-items:center;gap:20px;box-shadow:0 6px 12px rgba(0,0,0,0.6);}
+    header a.logo-link {display:block;}
+    header a.logo-link img {max-height:100px;animation:fadeIn 1.5s ease-in-out;display:block;}
+    header .header-text {display:flex;flex-direction:column;font-size:1.4em;}
+    header .header-text span {font-weight:bold;font-style:italic;color:var(--light-color);}
+    nav {position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;background:var(--secondary-color);padding:10px 20px;box-shadow:0 2px 6px rgba(0,0,0,0.6);}
+    .nav-links {display:flex;align-items:center;gap:20px;}
+    nav a {color:var(--light-color);text-decoration:none;font-weight:700;position:relative;transition:color 0.3s;}
+    nav a::after {content:'';position:absolute;width:0;height:3px;bottom:-5px;left:0;background:var(--accent-color);transition:width 0.3s;}
+    nav a:hover::after {width:100%;}
+    .lang-switch {display:flex;gap:6px;}
+    .lang-switch button {padding:4px 8px;font-size:0.8em;border:none;border-radius:4px;cursor:pointer;font-weight:bold;background:#fff;color:var(--primary-color);transition:background 0.3s;}
+    .lang-switch button:hover {background:var(--accent-color);color:#fff;}
+    section {padding:60px 20px;max-width:1200px;margin:auto;}
+    h2 {color:var(--accent-color);font-size:2.2em;margin-bottom:25px;border-left:6px solid var(--accent-color);padding-left:12px;text-transform:uppercase;letter-spacing:1px;}
+    .overview-container {display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center;animation:fadeIn 1.2s ease-in-out;}
+    .overview-container img {max-width:100%;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.6);}
+    .services {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+    .service {background:var(--secondary-color);border-radius:12px;padding:25px;box-shadow:0 6px 12px rgba(0,0,0,0.5);transition:transform 0.3s,box-shadow 0.3s;border-top:4px solid var(--accent-color);}
+    .service:hover {transform:translateY(-6px);box-shadow:0 12px 20px rgba(0,0,0,0.8);}
+    .service h3 {margin-top:0;color:var(--light-color);font-size:1.4em;text-align:center;}
+    .service ul {margin-top:12px;padding-left:22px;color:var(--light-color);}
+    .service li {margin-bottom:6px;}
+    .service a {display:inline-block;margin-top:15px;color:var(--light-color);font-weight:600;text-decoration:none;border:2px solid var(--accent-color);padding:8px 18px;border-radius:6px;transition:all 0.3s ease;text-align:center;}
+    .service a:hover {background:var(--accent-color);color:#fff;}
+    .about-section {min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:var(--primary-color);margin-top:40px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+    .about-section h2 {text-align:center;border:none;font-size:2.5em;margin-bottom:20px;color:var(--accent-color);}
+    .about-list {list-style-type:disc;padding-left:40px;margin-top:20px;font-size:1.2em;line-height:1.8;color:var(--light-color);}
+    .contact-info {margin-top:30px;text-align:center;font-size:1.1em;line-height:1.6;color:var(--light-color);}
+    form {display:flex;flex-direction:column;max-width:500px;margin:auto;background:var(--secondary-color);padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+    form input, form textarea {margin-bottom:18px;padding:12px;border:1px solid #555;border-radius:6px;font-size:1em;background:#0D1B2A;color:#f5f5f5;}
+    form button {padding:14px;background:linear-gradient(90deg,var(--accent-color),var(--primary-color));color:white;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:1.1em;transition:background 0.3s;}
+    form button:hover {background:var(--accent-color);color:#fff;}
+    footer {background:var(--secondary-color);color:white;text-align:center;padding:40px;margin-top:60px;font-size:0.9em;}
+    @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo-link" href="https://www.cidns.eu" target="_blank">
+      <img src="images/CIDNS-header.jpeg" alt="logo header Logo">
+    </a>
+    <div class="header-text">
+      <span><b><i>CLOUD INFRASTRUCTURE DIGITAL and NETWORK SERVICES</i></b></span>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-links">
+      <a id="nav-overview" href="#Overview">Overview</a>
+      <a id="nav-services" href="#services">Services & Products</a>
+      <a id="nav-about" href="#about">Why Us</a>
+      <a id="nav-contact" href="#contact">Contact</a>
+      <a id="nav-Partners" href=#"Partners">Partners</a>
+    </div>
+    <div class="lang-switch">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('fr')">FR</button>
+      <button onclick="setLanguage('nl')">NL</button>
+    </div>
+  </nav>
+
+  <section id="Overview">
+    <div class="overview-container">
+      <div> <h3> <i class="lang en">Your partner for a secure and agile cloud</i></h3>
+      <h3> <i class="lang fr">Votre partenaire pour un cloud sécurisé et agile</i></h3>
+      <h3> <i class="lang nl">Uw partner voor een veilige en flexibele cloud></i></h3>
+      <img src="images/CIDNS-header.jpeg" alt="CIDNS Logo"></div>
+      <div>
+        <h2>Overview</h2>
+        <p class="lang en">Consulting company founded in February 2025, specialized in cybersecurity.</p>
+        <p class="lang en">CIDNS companies is a privately-held, provider of professional IT services, active CIDNS is proud to rely on highly qualified and motivated teams of IT professionals, servicing a well established, satisfied, customer base. Indeed, our working culture is built around this permanent quest for the satisfaction of the technical, quality, budgetary and time constraints set by our customers.</p>
+            <p class="lang en">At <strong>CIDNS</strong>, we support your <strong>digital transformation</strong> with expert, secure, and business-focused cloud migration solutions. Our mission is simple: ensure a <strong>successful cloud migration</strong>—from initial audit to production—while guaranteeing performance, security, and compliance.</p>
+        <p class="lang fr" style="display:none;">Société de consultance fondée en février 2025, spécialisée en cybersécurité.</p>
+        <p class="lang fr" style="display:none;">CIDNS est une société privée fournissant des services IT professionnels. Nous nous appuyons sur des équipes hautement qualifiées et motivées, au service d'une clientèle satisfaite. Notre culture de travail est fondée sur la satisfaction permanente des contraintes techniques, de qualité, budgétaires et de délais fixées par nos clients.</p>
+        <p class="lang nl" style="display:none;">Consultancybedrijf opgericht in februari 2025, gespecialiseerd in cyberbeveiliging.</p>
+        <p class="lang fr" style="display:none;">Chez <strong> CIDNS</strong>, nous accompagnons votre <strong> transformation numérique</strong> avec des solutions de migration cloud expertes, sécurisées et orientées métier. Notre mission est simple : <strong> une migration cloud réussie </strong>- de l'audit initial à la production - tout en garantissant performance, sécurité et conformité.</p>
+        <p class="lang nl" style="display:none;">CIDNS is een particulier bedrijf dat professionele IT-diensten levert. We rekenen op hooggekwalificeerde en gemotiveerde teams die een tevreden klantenbestand bedienen. Onze werkcultuur is gebaseerd op het voortdurend streven naar voldoening van technische, kwaliteits-, budgettaire en tijdsvereisten die door onze klanten zijn gesteld.</p>
+        <p class="lang nl" style="display:none;">Bij <strong> CIDNS </strong> ondersteunen we uw <strong>digitale transformatie</strong> met deskundige, veilige en bedrijfsgerichte cloudmigratieoplossingen. Onze missie is eenvoudig: zorgen voor <strong>een succesvolle cloudmigratie</strong> - van initiële audit tot productie - en tegelijkertijd prestaties, beveiliging en compliance garanderen.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services & Products</h2>
+    <div class="services">
+     <div class="service"><h3>Initial Audit & Existing System Analysis</h3><ul><li>Identify existing infrastructure, applications, and processes</li><li>Evaluate business needs, technical and regulatory constraints</li></ul><a href="initial-audit-analysis.html">Learn more</a></div>
+     <div class="service"><h3>Needs Definition & Scoping</h3><ul><li>Gather client expectations</li><li>Define migration goals, priorities, and KPIs</li></ul><a href="#">Learn more</a></div>
+     <div class="service"><h3>Target Architecture Design</h3><ul><li>Create cloud architecture (AWS, Azure, GCP, or hybrid)</li><li>Select technologies: Kubernetes, OpenShift, IaaS/PaaS/SaaS
+</li><li>Optimize costs and performance</li></ul><a href="#">Learn more</a></div>
+     <div class="service"><h3>Cloud Provider Selection & Governance</h3><ul><li>Assist in cloud provider selection</li><li>Implement IT governance: security, compliance, supervision</li></ul><a href="#">Learn more</a></div>
+     <div class="service"><h3>Agile Project Management & Steering</h3><ul><li>Agile methodology (Scrum, Kanban)</li><li>Track deliverables, coordinate stakeholders</li></ul><a href="#">Learn more</a></div>
+     <div class="service"><h3>Delivery and Operations</h3><ul><li>Deliver according to quality, timeline, and budget</li><li>Provide documentation, handover, and support</li></ul><a href="#">Learn more</a></div>
+     <div class="service"><h3>Managed Security Services (MSS)</h3><ul><li>24/7 monitoring</li><li>SIEM integration</li><li>Endpoint and firewall management</li><li>Monthly compliance reporting</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Virtual CISO (vCISO)</h3><ul><li>On-demand security leadership</li><li>GDPR/ISO/NIS2 compliance</li><li>Risk management</li><li>Board reporting</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Managed SOC Services</h3><ul><li>Fully managed Security Operations Center</li><li>Log collection and correlation</li><li>Continuous threat detection</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Incident Response & Forensics</h3><ul><li>Immediate containment</li><li>Digital forensics</li><li>GDPR-compliant notification</li><li>Recovery planning and hardening recommendations</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Penetration Testing & Red Teaming</h3><ul><li>Network and application tests</li><li>Realistic simulations</li><li>Mitigation recommendations</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Security Assessments & Compliance Audits</h3><ul><li>GDPR, NIS2, ISO 27001 evaluations</li><li>Gap analysis</li><li>Certification readiness support</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Security Awareness Training</h3><ul><li>Phishing simulations</li><li>Sector-specific modules</li><li>Compliance tracking</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Vulnerability Management</h3><ul><li>Regular scans</li><li>CVSS prioritization</li><li>ITSM integration</li><li>Continuous monitoring</li></ul><a href="#">Learn more</a></div>
+      <div class="service"><h3>Threat Intelligence Services</h3><ul><li>Regional threat intelligence</li><li>Actor profiles</li><li>Real-time alerts</li><li>MITRE ATT&CK integration</li></ul><a href="#">Learn more</a></div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <h2>Why Us</h2>
+    <ul class="about-list">
+      <li class="lang en">EU-based infrastructure</li>
+      <li class="lang en">Strong alignment with European cybersecurity laws</li>
+      <li class="lang en">Multilingual teams</li>
+      <li class="lang en">Proven expertise in public and private sectors</li>
+      <li class="lang fr" style="display:none;">Infrastructure basée dans l'UE</li>
+      <li class="lang fr" style="display:none;">Forte conformité avec les lois européennes sur la cybersécurité</li>
+      <li class="lang fr" style="display:none;">Équipes multilingues</li>
+      <li class="lang fr" style="display:none;">Expertise avérée dans les secteurs public et privé</li>
+      <li class="lang nl" style="display:none;">Infrastructuur gevestigd in de EU</li>
+      <li class="lang nl" style="display:none;">Sterke naleving van Europese cyberbeveiligingswetten</li>
+      <li class="lang nl" style="display:none;">Meertalige teams</li>
+      <li class="lang nl" style="display:none;">Bewezen expertise in de publieke en private sector</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> info@cidns.eu</p>
+      <p><strong>Phone:</strong> +32 495 585 914</p>
+    </div>
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 CIDNS. All rights reserved.
+  </footer>
+
+  <script>
+    function handleSubmit(event){
+      event.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      event.target.reset();
+    }
+    function setLanguage(lang){
+      document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
+      document.querySelectorAll('.'+lang).forEach(el=>el.style.display='block');
+    }
+  </script>
+</body>
+</html>
