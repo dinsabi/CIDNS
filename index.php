@@ -12,6 +12,7 @@ $lang = $_SESSION['lang'] ?? 'en';
 $langDefaultCountry = [
   'fr' => 'FR', // France
   'nl' => 'BE', // Belgique
+  'fr' => 'BE',
   'en' => 'BE', // Belgium (par défaut)
 ];
 $defaultCountry = $langDefaultCountry[$lang] ?? 'BE';
