@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Managed SOC Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Same background/foreground + theme as your existing pages -->
+  <style>
+    :root {
+      --primary-color: #0D1B2A;
+      --secondary-color: #1B263B;
+      --accent-color: #4DA3FF;
+      --light-color: #F1FAEE;
+      --box-bg: #121212;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+      color: var(--light-color);
+    }
+
+    header {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 30px 40px 60px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: var(--accent-color);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      border-left: 6px solid var(--accent-color);
+      padding-left: 12px;
+      margin-top: 40px;
+      font-size: 1.8em;
+    }
+
+    .box {
+      background: var(--box-bg);
+      padding: 22px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    .box p, .box li {
+      line-height: 1.65;
+      color: var(--light-color);
+      opacity: 0.95;
+    }
+
+    /* Home button */
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: #00aaff;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      z-index: 1000;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 12px #00aaff, 0 0 20px #00aaff;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .home-button:hover {
+      background-color: #0088cc;
+      transform: scale(1.05);
+    }
+
+    .subtle {
+      margin: 0;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Back Home -->
+  <a href="index.php" class="home-button">
+    <span style="font-size:1.2em;">🏠</span>
+    <span>Back to Home</span>
+  </a>
+
+  <!-- Header -->
+  <header>
+    <h1>Managed SOC Services</h1>
+    <p>End-to-End Security Operations for Continuous Visibility and Faster Response</p>
+  </header>
+
+  <!-- Content -->
+  <section>
+
+    <div class="box">
+      <h2>Fully Managed Security Operations Center</h2>
+      <p class="subtle">
+        We operate your Security Operations Center end-to-end: monitoring, triage, investigation, and coordinated
+        response workflows. You benefit from dedicated security expertise, standardized processes, and scalable
+        operations—without building and staffing an internal SOC.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Log Collection and Correlation</h2>
+      <p class="subtle">
+        We collect and normalize logs from key sources (endpoints, servers, firewalls, cloud platforms, identity,
+        and critical applications). By correlating events across your environment, we turn isolated signals into
+        actionable insights—improving detection accuracy and reducing noise.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Continuous Threat Detection</h2>
+      <p class="subtle">
+        We provide continuous detection through tuned use cases, alert enrichment, and threat-focused analytics.
+        This enables faster identification of suspicious behavior, early containment, and improved resilience against
+        modern attacks—helping you reduce dwell time and operational impact.
+      </p>
+    </div>
+
+  </section>
+
+</body>
+</html>
