@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Request NIS2 Assessment | CIDNS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Poppins, Arial, sans-serif;
+  background: linear-gradient(to bottom, #1B263B, #0D1B2A);
+  color: #F1FAEE;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #121212;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+}
+
+h1 {
+  color: #4DA3FF;
+  margin-bottom: 10px;
+}
+
+p.subtitle {
+  opacity: .85;
+  margin-bottom: 30px;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 30px;
+}
+
+legend {
+  color: #4DA3FF;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  gap: 8px;             
+  margin: 6px 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Reset checkbox */
+.checkbox-group input[type="checkbox"],
+fieldset input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button {
+  background: #4DA3FF;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 0 12px #4DA3FF;
+}
+
+button:hover {
+  background: #2c82ff;
+}
+
+.footer-note {
+  font-size: .85em;
+  opacity: .7;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Request a NIS2 Assessment</h1>
+<p class="subtitle">
+This request allows CIDNS to prepare a tailored NIS2 readiness and compliance assessment.
+</p>
+
+<form method="post" action="process-assessment.php">
+
+<fieldset>
+<legend>1. Organization Information</legend>
+
+<label>Company name *</label>
+<input type="text" name="company" required>
+
+<label>Sector *</label>
+<select name="sector" required>
+  <option value="">-- Select --</option>
+  <option>Energy</option>
+  <option>Transport</option>
+  <option>Healthcare</option>
+  <option>Digital Infrastructure</option>
+  <option>Finance</option>
+  <option>Public Sector</option>
+  <option>Other</option>
+</select>
+
+<label>Country of operation *</label>
+<input type="text" name="country" required>
+
+<label>Number of employees *</label>
+<select name="employees" required>
+  <option value="">-- Select --</option>
+  <option>&lt; 50</option>
+  <option>50 – 250</option>
+  <option>250 – 1000</option>
+  <option>&gt; 1000</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>2. Contact Details</legend>
+
+<label>Full name *</label>
+<input type="text" name="name" required>
+
+<label>Role *</label>
+<select name="role" required>
+  <option>CEO / Managing Director</option>
+  <option>CIO / CTO</option>
+  <option>CISO / Security Officer</option>
+  <option>IT Manager</option>
+  <option>Compliance / Legal</option>
+</select>
+
+<label>Email *</label>
+<input type="email" name="email" required>
+
+<label>Phone</label>
+<input type="text" name="phone">
+</fieldset>
+
+<fieldset>
+<legend>3. NIS2 Qualification</legend>
+
+<label>Is your organization concerned by NIS2?</label>
+<select name="nis2_status">
+  <option>Essential entity</option>
+  <option>Important entity</option>
+  <option>Not sure</option>
+  <option>Not applicable (want confirmation)</option>
+</select>
+
+<label>Previous cybersecurity / compliance assessment?</label>
+<select name="previous_assessment">
+  <option>No</option>
+  <option>Internal assessment</option>
+  <option>External audit</option>
+  <option>ISO 27001 or equivalent</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>4. Current Cybersecurity Maturity</legend>
+
+<div class="checkbox-group">
+<label><input type="checkbox" name="maturity[]" value="Policies"> Security policies in place</label>
+<label><input type="checkbox" name="maturity[]" value="Risk"> Cyber risk management</label>
+<label><input type="checkbox" name="maturity[]" value="IAM"> IAM / MFA</label>
+<label><input type="checkbox" name="maturity[]" value="Incident"> Incident response plan</label>
+<label><input type="checkbox" name="maturity[]" value="Backup"> Backup & DR tested</label>
+<label><input type="checkbox" name="maturity[]" value="SOC"> SOC / monitoring</label>
+<label><input type="checkbox" name="maturity[]" value="Suppliers"> Supplier risk management</label>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>5. Assessment Scope</legend>
+
+<div class="checkbox-group">
+<label><input type="checkbox" name="scope[]" value="Readiness"> NIS2 readiness / gap analysis</label>
+<label><input type="checkbox" name="scope[]" value="Risk"> Cyber risk assessment</label>
+<label><input type="checkbox" name="scope[]" value="Governance"> Governance & responsibilities</label>
+<label><input type="checkbox" name="scope[]" value="Technical"> Technical security review</label>
+<label><input type="checkbox" name="scope[]" value="Incident"> Incident response & reporting</label>
+<label><input type="checkbox" name="scope[]" value="Full"> Full NIS2 assessment</label>
+</div>
+
+<label>Desired timeframe</label>
+<select name="timeline">
+  <option>&lt; 1 month</option>
+  <option>1 – 3 months</option>
+  <option>&gt; 3 months</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>6. Additional Information</legend>
+
+<label>Context / specific expectations</label>
+<textarea name="message"></textarea>
+
+<label>
+<input type="checkbox" required>
+I agree to be contacted by CIDNS and accept data processing (GDPR).
+</label>
+</fieldset>
+
+<button type="submit">Submit Assessment Request</button>
+
+<p class="footer-note">
+CIDNS – Independent Cybersecurity & NIS2 Consulting
+</p>
+
+</form>
+</div>
+
+</body>
+</html>
