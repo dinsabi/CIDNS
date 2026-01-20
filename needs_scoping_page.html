@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Needs Definition & Scoping | CIDNS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #001f3f;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 1em 2em;
+      text-align: center;
+    }
+    section {
+      padding: 2em;
+      background: rgba(0, 0, 0, 0.6);
+      max-width: 900px;
+      margin: 2em auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+    }
+    h2, h3 {
+      color: #00aaff;
+    }
+    blockquote {
+      font-style: italic;
+      color: #ccc;
+      border-left: 4px solid #00aaff;
+      padding-left: 1em;
+      margin: 1em 0;
+    }
+    ul, ol {
+      margin-left: 1.5em;
+    }
+    .chart-container {
+      margin-top: 2em;
+      text-align: center;
+    }
+    canvas {
+      background-color: white;
+      border-radius: 8px;
+      max-width: 100%;
+    }
+    .close-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: #aa0000;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      z-index: 1000;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+  .home-button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: #00aaff;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 12px #00aaff, 0 0 20px #00aaff;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+.home-button:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+  <a href="index.php" class="home-button"><span style="font-size: 1.2em;">🏠</span><span>Back to Home</span></a>
+
+  <header>
+    <h1>Needs Definition & Scoping</h1>
+    <p>Plan your transformation with confidence</p>
+  </header>
+
+  <section>
+    <h2>🧙‍♂️ Service Overview</h2>
+    <p>
+      “Needs Definition & Scoping” is the <strong>first critical step</strong> in any successful transformation, migration, or modernization project.
+      It is designed to <strong>capture client expectations</strong>, align business and technical stakeholders, and <strong>define a clear roadmap</strong>
+      supported by measurable goals and priorities.
+    </p>
+    <blockquote>
+      Main Objective: Translate business needs into a well-structured technical plan with clearly defined priorities, KPIs, and a shared vision of the migration scope.
+    </blockquote>
+
+    <h3>🔍 Key Phases of the Process</h3>
+    <ol>
+      <li><strong>Gathering Client Expectations</strong>
+        <ul>
+          <li>Workshops and stakeholder interviews (IT, business, security)</li>
+          <li>Functional requirements and operational constraints</li>
+          <li>Identification of key use cases</li>
+        </ul>
+      </li>
+      <li><strong>Defining Migration Goals</strong>
+        <ul>
+          <li>Business drivers: time-to-market, cost, security</li>
+          <li>Technical objectives: cloud migration, modernization</li>
+          <li>Regulatory and compliance alignment</li>
+        </ul>
+      </li>
+      <li><strong>Scoping and Prioritization</strong>
+        <ul>
+          <li>Application and infrastructure mapping</li>
+          <li>Quick wins vs long-term efforts</li>
+          <li>Risk and complexity analysis</li>
+        </ul>
+      </li>
+      <li><strong>Setting KPIs</strong>
+        <ul>
+          <li>Migration timelines</li>
+          <li>Adoption rates</li>
+          <li>Technical debt reduction</li>
+          <li>Performance and agility improvements</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="chart-container">
+      <h3>📊 Sample KPI Distribution</h3>
+      <canvas id="kpiChart" width="400" height="250"></canvas>
+    </div>
+
+    <h3>💡 Client Value & Benefits</h3>
+    <ul>
+      <li><strong>Risk Mitigation</strong>: Identify challenges early and avoid delays</li>
+      <li><strong>Strategic Alignment</strong>: Clarity on "what", "how", and "why"</li>
+      <li><strong>Efficiency</strong>: Focus on high-impact initiatives</li>
+      <li><strong>Measurable Outcomes</strong>: Use KPIs to track success</li>
+    </ul>
+
+    <h3>🌐 Why Start with Scoping?</h3>
+    <p>
+      Because successful transformation starts with clarity. Our structured Needs Definition & Scoping service helps you unlock fast,
+      secure, and business-aligned cloud or application migrations—<strong>without surprises</strong>.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 CIDNS - All rights reserved
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('kpiChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Timeline', 'Adoption', 'Debt Reduction', 'Agility'],
+        datasets: [{
+          label: 'KPI Score (%)',
+          data: [80, 65, 70, 90],
+          backgroundColor: ['#00aaff', '#ffaa00', '#33cc33', '#ff4444']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
