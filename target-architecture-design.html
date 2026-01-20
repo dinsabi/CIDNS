@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Target Architecture Design | CIDNS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #001f3f;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 1em 2em;
+      text-align: center;
+    }
+
+    section {
+      padding: 2em;
+      background: rgba(0, 0, 0, 0.6);
+      max-width: 900px;
+      margin: 2em auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+    }
+
+    h2, h3 {
+      color: #00aaff;
+    }
+
+    ul, ol {
+      margin-left: 1.5em;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #ccc;
+      border-left: 4px solid #00aaff;
+      padding-left: 1em;
+      margin: 1em 0;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: #00aaff;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      z-index: 1000;
+      box-shadow: 0 0 12px #00aaff, 0 0 20px #00aaff;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .home-button:hover {
+      background-color: #0088cc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.php" class="home-button"><span style="font-size: 1.2em;">🏠</span><span>Back to Home</span></a>
+
+  <header>
+    <h1>Target Architecture Design</h1>
+    <p>Build cloud architectures aligned with your business strategy</p>
+  </header>
+
+  <section>
+    <h2>1. Creating Cloud Architecture (AWS, Azure, GCP, or Hybrid)</h2>
+    <p>Designing a robust target architecture begins with selecting the right cloud model. Depending on business needs, the architecture can be:</p>
+
+    <h3>a. Single Cloud (AWS, Azure, or GCP)</h3>
+    <ul>
+      <li><strong>AWS</strong>: Ideal for scalable web services, strong DevOps toolchain (CodePipeline, CloudFormation), and advanced ML (SageMaker).</li>
+      <li><strong>Azure</strong>: Best for enterprise integrations (Active Directory, Office365), hybrid models (Azure Stack), and DevOps via Azure DevOps.</li>
+      <li><strong>GCP</strong>: Strong in data analytics (BigQuery), Kubernetes (GKE), and cost-effective compute (Preemptible VMs).</li>
+    </ul>
+
+    <h3>b. Hybrid Cloud</h3>
+    <p>Combines on-premise infrastructure with cloud platforms. Enables compliance with data residency laws and legacy app coexistence.</p>
+    <ul>
+      <li>Technologies: Azure Arc, AWS Outposts, Anthos (GCP).</li>
+    </ul>
+
+    <h3>c. Multi-Cloud</h3>
+    <p>Reduces vendor lock-in and increases resiliency.</p>
+    <ul>
+      <li>Uses abstraction layers or service meshes (e.g., Istio).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Selecting Technologies</h2>
+
+    <h3>a. Container Orchestration</h3>
+    <ul>
+      <li><strong>Kubernetes</strong>: De facto standard for container orchestration, suitable for hybrid/multi-cloud.</li>
+      <li><strong>OpenShift</strong>: Kubernetes platform with enhanced security, CI/CD, and enterprise governance.</li>
+    </ul>
+
+    <h3>b. Cloud Service Models</h3>
+    <ul>
+      <li><strong>IaaS (Infrastructure as a Service)</strong>: Provides virtualized compute, storage, networking (e.g., EC2, Azure VM).</li>
+      <li><strong>PaaS (Platform as a Service)</strong>: Offers app-hosting platforms (e.g., Heroku, Azure App Service, GCP App Engine).</li>
+      <li><strong>SaaS (Software as a Service)</strong>: Delivers complete applications (e.g., Salesforce, O365).</li>
+    </ul>
+
+    <h3>c. Storage & Databases</h3>
+    <ul>
+      <li><strong>Object Storage</strong>: S3, Azure Blob, GCS</li>
+      <li><strong>Managed Databases</strong>: RDS, Cloud SQL, Cosmos DB</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Optimizing Costs and Performance</h2>
+
+    <h3>a. Cost Management</h3>
+    <ul>
+      <li><strong>Tagging & Chargeback</strong>: Track resources per team or project.</li>
+      <li><strong>Reserved Instances & Savings Plans</strong>: Prepay to save 30–70%.</li>
+      <li><strong>Serverless Architectures</strong>: Use AWS Lambda, Azure Functions to reduce idle compute costs.</li>
+      <li><strong>Monitoring Tools</strong>: AWS Cost Explorer, Azure Cost Management, GCP Billing.</li>
+    </ul>
+
+    <h3>b. Performance Optimization</h3>
+    <ul>
+      <li><strong>Auto-scaling</strong>: Adjust compute based on demand.</li>
+      <li><strong>Content Delivery Networks (CDN)</strong>: Reduce latency (e.g., CloudFront, Azure CDN).</li>
+      <li><strong>Caching</strong>: Use Redis/Memcached for fast access.</li>
+      <li><strong>Load Balancing</strong>: Distribute traffic efficiently.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Sample Target Architecture Diagram</h2>
+    <p>This hybrid architecture illustrates:</p>
+    <ul>
+      <li>On-prem services connected to AWS VPC.</li>
+      <li>Kubernetes clusters for microservices.</li>
+      <li>RDS for relational data and S3 for object storage.</li>
+      <li>Azure AD integration for identity and access.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Conclusion</h2>
+    <blockquote>
+      A successful target architecture design aligns business needs with cloud capabilities.
+    </blockquote>
+    <p>By selecting the right cloud model, adopting flexible and secure technologies like Kubernetes/OpenShift, and continuously optimizing cost and performance, organizations can ensure a scalable, resilient, and efficient architecture.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 CIDNS - All rights reserved
+  </footer>
+
+</body>
+</html>
