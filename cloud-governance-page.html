@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Provider Selection & Governance | CIDNS</title>
+  <style>
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: #00aaff;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      z-index: 1000;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 12px #00aaff, 0 0 20px #00aaff;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .home-button:hover {
+      background-color: #0088cc;
+      transform: scale(1.05);
+    }
+    :root {
+      --primary-color: #0D1B2A;
+      --secondary-color: #1B263B;
+      --accent-color: #4DA3FF;
+      --light-color: #F1FAEE;
+      --footer-bg: #000000;
+      --box-bg: #121212;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #1B263B, #0D1B2A);
+      color: var(--light-color);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 30px 40px 60px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+    .home-button-inline {
+      position: fixed;
+      top: 100px;
+      right: 30px;
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: background 0.3s ease;
+      font-size: 0.9em;
+      z-index: 1000;
+    }
+    .home-button-inline i {
+      margin-right: 8px;
+    }
+    .home-button-inline:hover {
+      background-color: #368ce0;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: var(--accent-color);
+      border-left: 6px solid var(--accent-color);
+      padding-left: 12px;
+      margin-top: 40px;
+      font-size: 1.8em;
+    }
+    ul {
+      margin: 10px 0 30px 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .box {
+      background: var(--box-bg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: var(--footer-bg);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.php" class="home-button"><span style="font-size: 1.2em;">🏠</span><span>Back to Home</span></a>
+  <header>
+    <h1>Cloud Provider Selection & Governance</h1>
+    <p>Ensuring Strategic Cloud Adoption and Operational Excellence</p>
+  </header>
+
+  
+
+  <section>
+    <h2>🔍 Service Overview</h2>
+    <p>
+      CIDNS acts as a strategic partner to guide cloud journeys with clarity and control. By selecting the right provider and embedding governance from the start, organizations gain faster delivery, lower risk, and sustained compliance.
+    </p>
+    <p>This service is typically structured around two key pillars:</p>
+
+    <h3>1. Assist in Cloud Provider Selection</h3>
+    <p>This phase involves helping organizations evaluate and select the most suitable cloud provider(s) based on their business, technical, security, and financial requirements.</p>
+    <ul>
+      <li>Assessment of business and technical needs (workload profiles, resilience, availability, scalability, budget)</li>
+      <li>Benchmarking AWS, Azure, GCP, OVH, etc. by:</li>
+      <ul>
+        <li>Technical capabilities: PaaS, Kubernetes, AI/ML, storage, databases</li>
+        <li>Compliance readiness: ISO 27001, GDPR, HDS</li>
+        <li>Pricing models and cost optimizations</li>
+        <li>Data residency and geographic footprint</li>
+      </ul>
+      <li>Vendor lock-in risk assessment and mitigation</li>
+      <li>Recommendations: single, hybrid or multi-cloud strategies</li>
+    </ul>
+
+    <h3>2. Implement IT Governance: Security, Compliance, Supervision</h3>
+    <p>This component ensures robust governance is in place to meet compliance, security and monitoring requirements.</p>
+    <ul>
+      <li><strong>Cloud Security Governance:</strong>
+        <ul>
+          <li>IAM and role-based access control</li>
+          <li>Data encryption in transit and at rest</li>
+          <li>KMS and key lifecycle management (BYOK, HSMs)</li>
+          <li>Network security via VPNs, bastions, segmentation</li>
+        </ul>
+      </li>
+      <li><strong>Compliance Alignment:</strong>
+        <ul>
+          <li>Alignment to GDPR, PCI-DSS, ISO 27001, etc.</li>
+          <li>Audit logging (CloudTrail, Azure Monitor)</li>
+          <li>Compliance automation (Azure Policy, AWS Config)</li>
+        </ul>
+      </li>
+      <li><strong>Supervision & Control:</strong>
+        <ul>
+          <li>Full observability: logs, metrics, tracing</li>
+          <li>Cloud-native & third-party monitoring (Datadog, Grafana)</li>
+          <li>CMDB and asset discovery</li>
+          <li>FinOps: cloud usage and cost governance</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>✅ CIDNS Value Proposition</h2>
+    <blockquote>
+      CIDNS empowers organizations to drive secure, compliant, and optimized cloud transformations by embedding governance and expertise throughout the journey.
+    </blockquote>
+    <h3>📌 In Cloud Provider Selection</h3>
+    <ul>
+      <li><strong>Vendor-neutral expertise</strong>: Objective assessment for AWS, Azure, GCP, and sovereign clouds</li>
+      <li><strong>Multi-cloud strategy advisory</strong>: Tailored guidance for regulated and performance-driven sectors</li>
+      <li><strong>Cloud readiness assessment</strong>: Ensuring alignment with business priorities and technical maturity</li>
+    </ul>
+
+    <h3>📌 In Governance & Supervision</h3>
+    <ul>
+      <li><strong>Security enforcement at scale</strong>: SSO/MFA, RBAC, IAM, with IaC automation (Terraform, Ansible)</li>
+      <li><strong>DevSecOps integration</strong>: Shift-left security in CI/CD pipelines, container scanning, IaC validation</li>
+      <li><strong>Compliance-as-code</strong>: Automated enforcement using Sentinel, OPA/Gatekeeper</li>
+      <li><strong>Unified monitoring</strong>: Prometheus, Datadog, ELK stacks with SIEM integration (Splunk, Sentinel)</li>
+      <li><strong>FinOps efficiency</strong>: Budget alerts, cost reporting, anomaly detection across providers</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 CIDNS - All rights reserved
+  </footer>
+</body>
+</html>
