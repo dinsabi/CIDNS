@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- ===== Agile Project Management & Steering (CIDNS) ===== -->
+<a href="index.php" class="home-button"><span style="font-size: 1.2em;">🏠</span><span>Back to Home</span></a>
+<header>
+  <div class="header-container">
+    <h1>Agile Project Management & Steering</h1>
+    <p>Delivering Adaptive, Transparent, and Value-Focused Project Execution</p>
+  </div>
+</header>
+<section id="agile" class="cidns-section">
+  <div class="box">
+    <h2>Service Definition</h2>
+    <p>CIDNS delivers modern, outcome-driven governance using <strong>Scrum</strong> and <strong>Kanban</strong>. We ensure visibility, stakeholder alignment, and continuous value delivery across complex, security-sensitive programs.</p>
+  </div>
+  <div class="box">
+    <h2>Objectives</h2>
+    <ul>
+      <li>Implement Scrum and Kanban for adaptive project management</li>
+      <li>Track deliverables with clear KPIs and timelines</li>
+      <li>Coordinate stakeholders effectively to ensure alignment and rapid decision-making</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>Client Benefits</h2>
+    <ul>
+      <li>Enhanced visibility into project progress and risks</li>
+      <li>Improved predictability of delivery timelines</li>
+      <li>Stronger alignment between business goals and technical execution</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>Deliverables</h2>
+    <ul>
+      <li>Roadmaps, release plans, and sprint backlogs</li>
+      <li>Risk registers and stakeholder reports</li>
+      <li>Compliance-friendly documentation and reporting</li>
+    </ul>
+    <div class="deliverables-diagram" role="img" aria-label="Deliverables flow: Roadmaps & Backlogs to Risks & Reports to Compliance Docs">
+      <svg viewBox="0 0 1100 320" width="100%" height="auto">
+        <defs>
+          <linearGradient id="dgBox" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1B263B"/>
+            <stop offset="100%" stop-color="#0D1B2A"/>
+          </linearGradient>
+          <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#4DA3FF"/>
+          </marker>
+          <style>
+            .d-box{fill:url(#dgBox);stroke:#4DA3FF;stroke-width:2;rx:12;ry:12;}
+            .d-title{fill:#4DA3FF;font:700 16px Poppins, Arial, sans-serif;}
+            .d-text{fill:#F1FAEE;font:400 13px Poppins, Arial, sans-serif;}
+            .d-arrow{stroke:#4DA3FF;stroke-width:2.5;fill:none;marker-end:url(#arrowHead);}  
+            .deliverables-diagram{margin-top:18px;background:linear-gradient(180deg, rgba(77,163,255,.10), rgba(77,163,255,.03));border:1px solid rgba(77,163,255,.35);border-radius:12px;padding:12px;}
+  .diagram-caption{margin:10px 6px 0 6px;color:var(--light-color);opacity:.9;font-size:.95em;}
+</style>
+        </defs>
+
+        <!-- Column 1: Roadmaps & Backlogs -->
+        <rect class="d-box" x="30" y="40" width="320" height="220"/>
+        <text class="d-title" x="50" y="70">Roadmaps & Backlogs</text>
+        <text class="d-text"  x="50" y="100">• Release plan (quarters)</text>
+        <text class="d-text"  x="50" y="122">• Sprint backlog (2–4 weeks)</text>
+        <text class="d-text"  x="50" y="144">• Definition of Done/Ready</text>
+        <text class="d-text"  x="50" y="166">• Burndown / Burnup</text>
+
+        <!-- Arrow to Risks -->
+        <line class="d-arrow" x1="360" y1="150" x2="420" y2="150"/>
+
+        <!-- Column 2: Risk Registers & Reports -->
+        <rect class="d-box" x="430" y="40" width="320" height="220"/>
+        <text class="d-title" x="450" y="70">Risk Registers & Reports</text>
+        <text class="d-text"  x="450" y="100">• RAID log (Risks, Assumptions, Issues, Decisions)</text>
+        <text class="d-text"  x="450" y="122">• Stakeholder register & RACI</text>
+        <text class="d-text"  x="450" y="144">• Velocity, throughput KPIs</text>
+        <text class="d-text"  x="450" y="166">• Steering pack / Exec summary</text>
+
+        <!-- Arrow to Compliance -->
+        <line class="d-arrow" x1="750" y1="150" x2="810" y2="150"/>
+
+        <!-- Column 3: Compliance Docs -->
+        <rect class="d-box" x="820" y="40" width="250" height="220"/>
+        <text class="d-title" x="840" y="70">Compliance Docs</text>
+        <text class="d-text"  x="840" y="100">• Audit trail & approvals</text>
+        <text class="d-text"  x="840" y="122">• GDPR / ISO / NIS2 evidence</text>
+        <text class="d-text"  x="840" y="144">• Change & release records</text>
+        <text class="d-text"  x="840" y="166">• Policy & SOP updates</text>
+      </svg>
+      <p class="diagram-caption">Flow: <strong>Plans → Risks/Reports → Compliance</strong>. Aligns deliverables with audit‑ready governance.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: #00aaff;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 12px #00aaff, 0 0 20px #00aaff;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .home-button:hover {
+    background-color: #0088cc;
+    transform: scale(1.05);
+  }
+  :root {
+    --primary-color: #0D1B2A;
+    --secondary-color: #1B263B;
+    --accent-color: #4DA3FF;
+    --light-color: #F1FAEE;
+    --box-bg: #121212;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+    color: var(--light-color);
+  }
+  header {
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 30px 40px 60px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.4em;
+  }
+  header p {
+    font-size: 1.1em;
+    color: var(--accent-color);
+  }
+  section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h2 {
+    color: var(--accent-color);
+    border-left: 6px solid var(--accent-color);
+    padding-left: 12px;
+    margin-top: 40px;
+    font-size: 1.8em;
+  }
+  .box {
+    background: var(--box-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+  }
+  ul {
+    margin: 10px 0 30px 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  .deliverables-diagram {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+</style>
