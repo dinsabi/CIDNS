@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Penetration Testing &amp; Red Teaming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --primary-color:#0D1B2A;
+      --secondary-color:#1B263B;
+      --accent-color:#4DA3FF;
+      --light-color:#F1FAEE;
+      --box-bg:#121212;
+    }
+
+    body{
+      margin:0;
+      font-family:'Poppins', Arial, sans-serif;
+      background:linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+      color:var(--light-color);
+    }
+
+    header{
+      background:var(--primary-color);
+      color:var(--light-color);
+      padding:30px 40px 60px;
+      text-align:center;
+      box-shadow:0 6px 12px rgba(0,0,0,0.6);
+    }
+
+    header h1{
+      margin:0;
+      font-size:2.4em;
+    }
+
+    header p{
+      font-size:1.1em;
+      color:var(--accent-color);
+    }
+
+    section{
+      max-width:1000px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    h2{
+      color:var(--accent-color);
+      border-left:6px solid var(--accent-color);
+      padding-left:12px;
+      margin:0 0 14px 0;
+      font-size:1.8em;
+    }
+
+    .box{
+      background:var(--box-bg);
+      padding:22px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.5);
+      margin-bottom:30px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .text p{
+      margin:0 0 12px 0;
+      line-height:1.65;
+      opacity:0.95;
+    }
+
+    .text ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+
+    .text li{
+      margin:0 0 8px 0;
+      line-height:1.55;
+      opacity:0.95;
+    }
+
+    .diagram{
+      padding:12px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(77,163,255,0.12), rgba(77,163,255,0.04));
+      border:1px solid rgba(77,163,255,0.35);
+    }
+
+    .caption{
+      margin-top:10px;
+      font-size:0.95em;
+      opacity:0.9;
+      text-align:center;
+    }
+
+    /* Home button */
+    .home-button{
+      position:fixed;
+      top:10px;
+      right:20px;
+      background-color:#00aaff;
+      color:white;
+      padding:0.5em 1em;
+      border-radius:5px;
+      text-decoration:none;
+      font-size:1em;
+      z-index:1000;
+      transition:background-color 0.3s ease, transform 0.2s ease;
+      box-shadow:0 0 12px #00aaff, 0 0 20px #00aaff;
+      display:flex;
+      align-items:center;
+      gap:0.5em;
+    }
+
+    .home-button:hover{
+      background-color:#0088cc;
+      transform:scale(1.05);
+    }
+
+    @media (max-width: 860px){
+      .split{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.php" class="home-button">
+    <span style="font-size:1.2em;">🏠</span><span>Back to Home</span>
+  </a>
+
+  <header>
+    <h1>Penetration Testing &amp; Red Teaming</h1>
+    <p>Real-World Offensive Security to Validate Exposure and Improve Resilience</p>
+  </header>
+
+  <section>
+
+    <!-- 1) Network and application tests -->
+    <div class="box">
+      <h2>Network and Application Tests</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            We assess your exposure through structured penetration tests across networks, infrastructure, and
+            applications. The goal is to identify exploitable vulnerabilities, validate impact, and provide
+            actionable remediation guidance.
+          </p>
+          <ul>
+            <li><strong>Network:</strong> external/internal testing, segmentation validation, privilege escalation paths.</li>
+            <li><strong>Applications:</strong> web/mobile/API testing, authentication/authorization flaws, OWASP-aligned checks.</li>
+            <li><strong>Cloud/Identity (optional):</strong> misconfigurations, IAM weaknesses, tenant hardening opportunities.</li>
+            <li><strong>Evidence-based:</strong> exploit validation where safe, with clear impact and reproducible steps.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 240" width="100%" height="auto" role="img" aria-label="Testing scope: network and applications with findings consolidation">
+            <defs>
+              <marker id="pta1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="22" y="40" width="210" height="60" rx="12"/>
+              <rect x="22" y="140" width="210" height="60" rx="12"/>
+              <rect x="290" y="90" width="210" height="60" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="14" font-weight="600">
+              <text x="48" y="75">Network Tests</text>
+              <text x="48" y="175">App / API Tests</text>
+              <text x="314" y="125">Consolidated Findings</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#pta1)">
+              <line x1="232" y1="70"  x2="290" y2="110"/>
+              <line x1="232" y1="170" x2="290" y2="130"/>
+            </g>
+          </svg>
+
+          <div class="caption">Infrastructure + application coverage → validated findings.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2) Realistic simulations -->
+    <div class="box">
+      <h2>Realistic Simulations</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            Red Team exercises simulate realistic attacker behavior to test not only vulnerabilities, but also
+            your ability to detect, respond, and contain. We emulate real-world tactics to measure resilience
+            across people, process, and technology.
+          </p>
+          <ul>
+            <li><strong>Objective-based:</strong> access a specific system, reach sensitive data, or validate security controls.</li>
+            <li><strong>Stealth &amp; realism:</strong> TTP-driven scenarios (phishing, lateral movement, persistence) when in scope.</li>
+            <li><strong>Blue Team validation:</strong> measure detection, triage speed, response effectiveness, and escalation paths.</li>
+            <li><strong>Safe execution:</strong> strict rules of engagement, scope boundaries, and business-friendly scheduling.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 230" width="100%" height="auto" role="img" aria-label="Red team kill-chain style flow: initial access to objective with detection checkpoints">
+            <defs>
+              <marker id="pta2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="20"  y="86" width="115" height="54" rx="12"/>
+              <rect x="150" y="86" width="115" height="54" rx="12"/>
+              <rect x="280" y="86" width="115" height="54" rx="12"/>
+              <rect x="410" y="86" width="90"  height="54" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="13.5" font-weight="600">
+              <text x="36"  y="118">Initial</text>
+              <text x="36"  y="136">Access</text>
+
+              <text x="164" y="118">Lateral</text>
+              <text x="164" y="136">Move</text>
+
+              <text x="298" y="118">Privilege</text>
+              <text x="298" y="136">Escal.</text>
+
+              <text x="422" y="126">Objective</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#pta2)">
+              <line x1="135" y1="113" x2="150" y2="113"/>
+              <line x1="265" y1="113" x2="280" y2="113"/>
+              <line x1="395" y1="113" x2="410" y2="113"/>
+            </g>
+
+            <g fill="rgba(77,163,255,0.16)" stroke="rgba(77,163,255,0.35)">
+              <rect x="20" y="28" width="480" height="38" rx="10"/>
+            </g>
+            <text x="34" y="52" fill="#F1FAEE" font-size="13">
+              Detection checkpoints: alerting • escalation • containment
+            </text>
+          </svg>
+
+          <div class="caption">Measure both exposure and detection/response readiness.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3) Mitigation recommendations -->
+    <div class="box">
+      <h2>Mitigation Recommendations</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            We translate findings into a prioritized remediation plan that reduces real risk and strengthens your
+            security baseline. Recommendations are pragmatic, mapped to business impact, and aligned with best practices.
+          </p>
+          <ul>
+            <li><strong>Prioritization:</strong> critical paths first (exposure + exploitability + business impact).</li>
+            <li><strong>Fix guidance:</strong> configuration changes, patching, secure coding, segmentation, identity hardening.</li>
+            <li><strong>Control uplift:</strong> logging/monitoring improvements, EDR tuning, MFA/conditional access, secure backups.</li>
+            <li><strong>Deliverables:</strong> executive summary + technical report + replay steps + remediation roadmap.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 230" width="100%" height="auto" role="img" aria-label="Recommendations flow: findings to priorities to roadmap">
+            <defs>
+              <marker id="pta3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="25"  y="88" width="140" height="54" rx="12"/>
+              <rect x="190" y="88" width="145" height="54" rx="12"/>
+              <rect x="360" y="88" width="135" height="54" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="14" font-weight="600">
+              <text x="56"  y="121">Findings</text>
+              <text x="214" y="121">Priorities</text>
+              <text x="388" y="121">Roadmap</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#pta3)">
+              <line x1="165" y1="115" x2="190" y2="115"/>
+              <line x1="335" y1="115" x2="360" y2="115"/>
+            </g>
+
+            <g fill="rgba(77,163,255,0.18)">
+              <rect x="25" y="158" width="470" height="42" rx="10"/>
+            </g>
+            <text x="40" y="184" fill="#F1FAEE" font-size="13">
+              Output: actionable remediation plan + executive summary
+            </text>
+          </svg>
+
+          <div class="caption">Clear actions mapped to impact and effort.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
