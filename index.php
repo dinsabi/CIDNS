@@ -10,10 +10,9 @@ $lang = $_SESSION['lang'] ?? 'en';
 
 // ---- Default country per language ----------------------------------------
 $langDefaultCountry = [
-  'fr' => 'FR', // France
-  'nl' => 'BE', // Belgique Neerlandophone
-  'fr' => 'BE', // Belgique Francophone
-  'en' => 'BE', // Belgium (par défaut)
+  'en' => 'BE', // Belgium (default)
+  'fr' => 'BE', // Belgique francophone
+  'nl' => 'BE', // Belgique neerlandophone
 ];
 $defaultCountry = $langDefaultCountry[$lang] ?? 'BE';
 
@@ -62,7 +61,7 @@ $serverFallbackPrefixes = ['BE'=>'+32','FR'=>'+33','NL'=>'+31','DE'=>'+49','LU'=
 // ---- Form handling --------------------------------------------------------
 $formStatus = null; // 'ok' | 'error'
 $formErrors = [];
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
   // Basic CSRF check
   if (!isset($_POST['csrf']) || !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
     $formErrors[] = 'Invalid request. Please try again.';
@@ -189,9 +188,9 @@ $t = [
     'nav' => ['Overview','Services & Products','Why Us','Contact','Partners'],
     'hero' => 'Your partner for a <span class="highlight">secure and agile</span> cloud',
     'overview_h' => 'Overview',
-    'overview_p1' => 'Consulting company founded in February 2025, specialized in cybersecurity.',
-    'overview_p2' => 'CIDNS is a privately held provider of professional IT services. We rely on highly qualified and motivated teams of IT professionals, serving a well-established and satisfied customer base. Our working culture is built around continuously meeting the technical, quality, budgetary, and timing constraints set by our customers.',
-    'overview_p3' => 'At <strong>CIDNS</strong>, we support your <strong>digital transformation</strong> with expert, secure, and business-focused cloud migration solutions. Our mission is simple: ensure a <strong>successful cloud migration</strong>—from initial audit to production—while guaranteeing performance, security, and compliance.',
+    'overview_p1' => '<strong>Founded in February 2025, CIDNS is an independent cybersecurity and cloud consulting company.</strong>',
+    'overview_p2' => 'We support organizations in securing and governing their digital transformation through expert, compliant, and business-focused cybersecurity and cloud solutions.',
+    'overview_p3' => 'At <strong>CIDNS</strong>, our experienced consultants deliver end-to-end services—from assessment and architecture to implementation—ensuring performance, security, and regulatory compliance.',
     'services_h' => 'Services & Products',
     'learn_more' => 'Learn more',
     'labels' => [ 'new' => 'NEW' ],
@@ -199,15 +198,9 @@ $t = [
       'badge'  => 'Offer of the month',
       'h'      => 'NIS2 Compliance & Readiness',
       'sub'    => 'End-to-end support to meet EU NIS2 cybersecurity obligations.',
-      'points' => [
-        'Gap assessment & prioritized roadmap',
-        'Policies & governance (ISO 27001 alignment)',
-        '72h incident reporting playbooks',
-        'Third-party & supply-chain risk management',
-        'vCISO & continuous compliance monitoring'
-      ],
+      'points' => ['Gap analysis & readiness roadmap', 'Policies, controls & evidence pack', 'Executive briefing & implementation support'],
       'cta'   => 'Explore our NIS2 service',
-      'href'  => 'nis2-compliance.php'
+      'href'  => 'Nis2-compliance.html'
     ],
     'services' => [
       ['Initial Audit & Existing System Analysis', ['Identify existing infrastructure, applications, and processes', 'Evaluate business needs, technical and regulatory constraints'], 'initial-audit-analysis.html'],
@@ -216,18 +209,39 @@ $t = [
       ['Cloud Provider Selection & Governance', ['Assist in cloud provider selection','Implement IT governance: security, compliance, supervision'], 'cloud-governance-page.html'],
       ['Agile Project Management & Steering', ['Agile methodology (Scrum, Kanban)','Track deliverables, coordinate stakeholders'], 'agile-project-management-steering.html'],
       ['Delivery and Operations', ['Deliver according to quality, timeline, and budget','Provide documentation, handover, and support'], '#'],
-      ['Managed Security Services (MSS)', ['24/7 monitoring','SIEM integration','Endpoint and firewall management','Monthly compliance reporting'], '#'],
-      ['Virtual CISO (vCISO)', ['On-demand security leadership','GDPR/ISO/NIS2 compliance','Risk management','Board reporting'], '#'],
-      ['Managed SOC Services', ['Fully managed Security Operations Center','Log collection and correlation','Continuous threat detection'], '#'],
-      ['Incident Response & Forensics', ['Immediate containment','Digital forensics','GDPR-compliant notification','Recovery planning and hardening recommendations'], '#'],
-      ['Penetration Testing & Red Teaming', ['Network and application tests','Realistic simulations','Mitigation recommendations'], '#'],
-      ['Security Assessments & Compliance Audits', ['GDPR, NIS2, ISO 27001 evaluations','Gap analysis','Certification readiness support'], '#'],
-      ['Security Awareness Training', ['Phishing simulations','Sector-specific modules','Compliance tracking'], '#'],
-      ['Vulnerability Management', ['Regular scans','CVSS prioritization','ITSM integration','Continuous monitoring'], '#'],
-      ['Threat Intelligence Services', ['Regional threat intelligence','Actor profiles','Real-time alerts','MITRE ATT&CK integration'], '#']
+      ['Managed Security Services (MSS)', ['24/7 monitoring','SIEM integration','Endpoint and firewall management','Monthly compliance reporting'], 'Managed-Security-Services.html'],
+      ['Virtual CISO (vCISO)', ['On-demand security leadership','GDPR/ISO/NIS2 compliance','Risk management','Board reporting'], 'Virtual-CISO.html'],
+      ['Managed SOC Services', ['Fully managed Security Operations Center','Log collection and correlation','Continuous threat detection'], 'Managed-SOC-Services.html'],
+      ['Incident Response & Forensics', ['Immediate containment','Digital forensics','GDPR-compliant notification','Recovery planning and hardening recommendations'], 'Incident-Response-Forensics.html'],
+      ['Penetration Testing & Red Teaming', ['Network and application tests','Realistic simulations','Mitigation recommendations'], 'Penetration-Testing-Red-Teaming.html'],
+      ['Security Assessments & Compliance Audits', ['GDPR, NIS2, ISO 27001 evaluations','Gap analysis','Certification readiness support'], 'Security-Assessments-Compliance-Audits.html'],
+      ['Security Awareness Training', ['Phishing simulations','Sector-specific modules','Compliance tracking'], 'Security-Awareness-Training.html'],
+      ['Vulnerability Management', ['Regular scans','CVSS prioritization','ITSM integration','Continuous monitoring'], 'Vulnerability-Management.html'],
+      ['Threat Intelligence Services', ['Regional threat intelligence','Actor profiles','Real-time alerts','MITRE ATT&CK integration'], 'Threat-Intelligence-Services.html']
     ],
     'whyus_h' => 'Why Us',
-    'whyus_list' => ['EU-based infrastructure','Strong alignment with European cybersecurity laws','Multilingual teams','Proven expertise in public and private sectors'],
+    'whyus' => [
+      [
+        'title' => 'EU-based infrastructure',
+        'icon'  => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm0 2c1.3 0 2.6.4 3.6 1.1-.6.4-1.4.9-2 1.4-.7.6-1.3 1.2-1.6 1.9-.3-.7-.9-1.3-1.6-1.9-.6-.5-1.4-1-2-1.4A7.96 7.96 0 0112 4Zm-6.9 8c0-.7.1-1.4.3-2h3.1c-.1.6-.2 1.3-.2 2s.1 1.4.2 2H5.4a7.9 7.9 0 01-.3-2Zm1.1 4h3.5c.4 1.6 1.1 3 2.1 4.1A8.02 8.02 0 016.2 16Zm3.5-8H6.2A8.02 8.02 0 0111.7 3.9C10.7 5 10 6.4 9.6 8Zm2.4 12c-1.2-1.1-2.1-2.7-2.5-4.9h5c-.4 2.2-1.3 3.8-2.5 4.9Zm2.7-6H9.4c-.1-.6-.2-1.3-.2-2s.1-1.4.2-2h5.4c.1.6.2 1.3.2 2s-.1 1.4-.2 2Zm.6 8.1c1-1.1 1.7-2.5 2.1-4.1h3.5a8.02 8.02 0 01-5.6 4.1Zm2.3-6.1c.1-.6.2-1.3.2-2s-.1-1.4-.2-2h3.1c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.1Zm-.1-6c-.4-1.6-1.1-3-2.1-4.1A8.02 8.02 0 0117.8 8h-3.5Z"/></svg>',
+        'desc'  => 'Our infrastructure is hosted and operated entirely within the European Union, ensuring full data sovereignty and clear EU jurisdiction. This minimizes exposure to extraterritorial requests and helps regulated organizations keep sensitive data where their compliance obligations are defined. We use EU-based data centers, redundancy, and hardened network segmentation to support availability, resilience, and continuity for both public institutions and enterprises.'
+      ],
+      [
+        'title' => 'Strong alignment with European cybersecurity laws',
+        'icon'  => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2 20 6v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4Zm0 2.3L6 6.8V12c0 4 2.6 7.6 6 8.9 3.4-1.3 6-4.9 6-8.9V6.8l-6-2.5Z"/></svg>',
+        'desc'  => 'Compliance is built in by design. We align governance, risk management, and technical controls with key European frameworks such as NIS2 and GDPR (and ISO/IEC 27001 and DORA where relevant). In practice, this means traceable policies, audit-ready evidence, incident response readiness, and continuous improvement—so you can meet obligations efficiently and reduce regulatory and operational risk.'
+      ],
+      [
+        'title' => 'Multilingual teams',
+        'icon'  => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M4 4h16v10H7l-3 3V4Zm2 2v7.2L7.2 12H18V6H6Zm14 12H10v2h10l3 3v-9h-3v4Z"/></svg>',
+        'desc'  => 'Our consultants work natively across French, Dutch, and English, enabling direct communication with technical teams, executives, and external stakeholders. This reduces misunderstandings, accelerates delivery, and ensures requirements are captured correctly—from risk assessments and architecture decisions to audit documentation and incident communications.'
+      ],
+      [
+        'title' => 'Proven expertise in public and private sectors',
+        'icon'  => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M3 21h18v-2H3v2Zm2-4h14V3H5v14Zm2-2V5h10v10H7Zm1-8h2v2H8V7Zm0 4h2v2H8v-2Zm0 4h2v2H8v-2Zm4-8h2v2h-2V7Zm0 4h2v2h-2v-2Zm0 4h2v2h-2v-2Z"/></svg>',
+        'desc'  => 'We bring hands-on experience across both public administrations and private enterprises, including regulated and critical environments. This dual perspective helps us navigate public-sector governance and accountability while delivering the agility and performance expected in the private sector. The result is practical, measurable security improvements—aligned with compliance needs and real-world operational constraints.'
+      ],
+    ],
     'contact_h' => 'Contact',
     'email' => 'Email',
     'phone' => 'Phone',
@@ -251,9 +265,9 @@ $t = [
     'nav' => ['Aperçu','Services & Produits','Pourquoi nous','Contact','Partenaires'],
     'hero' => 'Votre partenaire pour un cloud <span class="highlight">sécurisé et agile</span>',
     'overview_h' => 'Aperçu',
-    'overview_p1' => 'Société de consultance fondée en février 2025, spécialisée en cybersécurité.',
-    'overview_p2' => 'CIDNS est une société privée fournissant des services IT professionnels. Nous nous appuyons sur des équipes hautement qualifiées et motivées, au service d\'une clientèle fidèle et satisfaite. Notre culture de travail repose sur la satisfaction continue des exigences techniques, qualitatives, budgétaires et de délais fixées par nos clients.',
-    'overview_p3' => 'Chez <strong>CIDNS</strong>, nous accompagnons votre <strong>transformation numérique</strong> avec des solutions de migration cloud expertes, sécurisées et orientées métier. Notre mission est simple : assurer une <strong>migration cloud réussie</strong> — de l\'audit initial à la production — tout en garantissant performance, sécurité et conformité.',
+    'overview_p1' => '<strong>Fondée en février 2025, CIDNS est une société indépendante de conseil en cybersécurité et en cloud</strong>',
+    'overview_p2' => 'Nous accompagnons les organisations dans la sécurisation et la gouvernance de leur transformation digitale grâce à des solutions de cybersécurité et de cloud expertes, conformes et orientées métier.',
+    'overview_p3' => 'Chez <strong>CIDNS</strong>, nos consultants expérimentés interviennent de bout en bout — de l’audit et de l’architecture jusqu’à la mise en œuvre — en garantissant performance, sécurité et conformité réglementaire.',
     'services_h' => 'Services & Produits',
     'learn_more' => 'En savoir plus',
     'labels' => [ 'new' => 'Nouveauté' ],
@@ -261,15 +275,9 @@ $t = [
       'badge'  => 'Offre du mois',
       'h'      => 'Conformité & Préparation NIS2',
       'sub'    => 'Accompagnement de bout en bout pour répondre aux obligations NIS2 dans l’UE.',
-      'points' => [
-        'État des lieux & feuille de route priorisée',
-        'Politiques & gouvernance (alignement ISO 27001)',
-        'Playbooks de notification d’incident sous 72h',
-        'Gestion des risques tiers / chaîne d’approvisionnement',
-        'vCISO & conformité continue'
-      ],
+      'points' => ['Analyse d’écart & feuille de route', 'Politiques, contrôles & dossier de preuves', 'Briefing direction & support de mise en œuvre'],
       'cta'   => 'Découvrir notre service NIS2',
-      'href'  => 'nis2-compliance.php'
+      'href'  => 'Nis2-compliance.html'
     ],
     'services' => [
       ['Audit initial & Analyse de l’existant', ['Cartographier les infrastructures, applications et processus', 'Évaluer les besoins métiers et contraintes techniques/réglementaires'], 'initial-audit-analysis.html'],
@@ -278,18 +286,23 @@ $t = [
       ['Choix du fournisseur & Gouvernance', ['Aide au choix du cloud','Mise en place de la gouvernance IT : sécurité, conformité, supervision'], 'cloud-governance-page.html'],
       ['Pilotage & gestion de projet agile', ['Méthodologies agiles (Scrum, Kanban)','Suivi des livrables, coordination parties prenantes'], 'agile-project-management-steering.html'],
       ['Delivery & Opérations', ['Livraison selon qualité, délais, budget','Documentation, transfert et support'], '#'],
-      ['Managed Security Services (MSS)', ['Supervision 24/7','Intégration SIEM','Gestion endpoints & firewall','Rapports mensuels de conformité'], '#'],
-      ['vCISO (CISO virtuel)', ['Leadership sécurité à la demande','Conformité RGPD/ISO/NIS2','Gestion des risques','Reporting au board'], '#'],
-      ['SOC managé', ['Centre Opérationnel de Sécurité managé','Collecte et corrélation des logs','Détection continue des menaces'], '#'],
-      ['Réponse à incident & Forensic', ['Confinement immédiat','Forensique numérique','Notification RGPD conforme','Plan de reprise & recommandations de durcissement'], '#'],
-      ['Tests d’intrusion & Red Team', ['Tests réseau & applicatif','Simulations réalistes','Recommandations de remédiation'], '#'],
-      ['Évaluations sécurité & Audits conformité', ['Évaluations RGPD, NIS2, ISO 27001','Gap analysis','Préparation à la certification'], '#'],
-      ['Sensibilisation sécurité', ['Campagnes phishing','Modules sectoriels','Suivi de conformité'], '#'],
-      ['Gestion des vulnérabilités', ['Scans réguliers','Priorisation CVSS','Intégration ITSM','Surveillance continue'], '#'],
-      ['Threat Intelligence', ['Veille régionale','Profils d’acteurs','Alertes en temps réel','Intégration MITRE ATT&CK'], '#']
+      ['Managed Security Services (MSS)', ['Supervision 24/7','Intégration SIEM','Gestion endpoints & firewall','Rapports mensuels de conformité'], 'Managed-Security-Services.html'],
+      ['vCISO (CISO virtuel)', ['Leadership sécurité à la demande','Conformité RGPD/ISO/NIS2','Gestion des risques','Reporting au board'], 'Virtual-CISO.html'],
+      ['SOC managé', ['Centre Opérationnel de Sécurité managé','Collecte et corrélation des logs','Détection continue des menaces'], 'Managed-SOC-Services.html'],
+      ['Réponse à incident & Forensic', ['Confinement immédiat','Forensique numérique','Notification RGPD conforme','Plan de reprise & recommandations de durcissement'], 'Incident-Response-Forensics.html'],
+      ['Tests d’intrusion & Red Team', ['Tests réseau & applicatif','Simulations réalistes','Recommandations de remédiation'], 'Penetration-Testing-Red-Teaming.html'],
+      ['Évaluations sécurité & Audits conformité', ['Évaluations RGPD, NIS2, ISO 27001','Gap analysis','Préparation à la certification'], 'Security-Assessments-Compliance-Audits.html'],
+      ['Sensibilisation sécurité', ['Campagnes phishing','Modules sectoriels','Suivi de conformité'], 'Security-Awareness-Training.html'],
+      ['Gestion des vulnérabilités', ['Scans réguliers','Priorisation CVSS','Intégration ITSM','Surveillance continue'], 'Vulnerability-Management.html'],
+      ['Threat Intelligence', ['Veille régionale','Profils d’acteurs','Alertes en temps réel','Intégration MITRE ATT&CK'], 'Threat-Intelligence-Services.html']
     ],
     'whyus_h' => 'Pourquoi nous',
-    'whyus_list' => ['Infrastructure basée dans l’UE','Alignement fort avec les lois européennes de cybersécurité','Équipes multilingues','Expertise avérée secteur public & privé'],
+    'whyus' => [
+      ["title" => 'Infrastructure basée dans l’UE',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm0 2c1.3 0 2.6.4 3.6 1.1-.6.4-1.4.9-2 1.4-.7.6-1.3 1.2-1.6 1.9-.3-.7-.9-1.3-1.6-1.9-.6-.5-1.4-1-2-1.4A7.96 7.96 0 0112 4Zm-6.9 8c0-.7.1-1.4.3-2h3.1c-.1.6-.2 1.3-.2 2s.1 1.4.2 2H5.4a7.9 7.9 0 01-.3-2Zm1.1 4h3.5c.4 1.6 1.1 3 2.1 4.1A8.02 8.02 0 016.2 16Zm3.5-8H6.2A8.02 8.02 0 0111.7 3.9C10.7 5 10 6.4 9.6 8Zm2.4 12c-1.2-1.1-2.1-2.7-2.5-4.9h5c-.4 2.2-1.3 3.8-2.5 4.9Zm2.7-6H9.4c-.1-.6-.2-1.3-.2-2s.1-1.4.2-2h5.4c.1.6.2 1.3.2 2s-.1 1.4-.2 2Zm.6 8.1c1-1.1 1.7-2.5 2.1-4.1h3.5a8.02 8.02 0 01-5.6 4.1Zm2.3-6.1c.1-.6.2-1.3.2-2s-.1-1.4-.2-2h3.1c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.1Zm-.1-6c-.4-1.6-1.1-3-2.1-4.1A8.02 8.02 0 0117.8 8h-3.5Z"/></svg>',"desc" => 'Notre infrastructure est hébergée et opérée intégralement dans l’Union européenne, ce qui garantit la souveraineté des données et une juridiction clairement définie. Cela limite l’exposition à des demandes extraterritoriales et facilite la conformité des organisations réglementées. Nous nous appuyons sur des data centers basés dans l’UE, des architectures redondantes et une segmentation réseau renforcée pour assurer disponibilité, résilience et continuité d’activité.' ],
+      ["title" => 'Alignement avec les lois européennes de cybersécurité',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2 20 6v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4Zm0 2.3L6 6.8V12c0 4 2.6 7.6 6 8.9 3.4-1.3 6-4.9 6-8.9V6.8l-6-2.5Z"/></svg>',"desc" => 'La conformité est intégrée dès la conception. Nous alignons la gouvernance, la gestion des risques et les contrôles techniques avec les principaux cadres européens (NIS2 et RGPD, ainsi qu’ISO/IEC 27001 et DORA lorsque pertinent). Concrètement : politiques traçables, preuves prêtes pour l’audit, préparation à la réponse à incident et amélioration continue — afin de répondre efficacement aux obligations et de réduire les risques réglementaires et opérationnels.' ],
+      ["title" => 'Équipes multilingues',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M4 4h16v10H7l-3 3V4Zm2 2v7.2L7.2 12H18V6H6Zm14 12H10v2h10l3 3v-9h-3v4Z"/></svg>',"desc" => 'Nos consultants travaillent au quotidien en français, néerlandais et anglais, pour une communication directe avec les équipes techniques, la direction et les parties prenantes externes. Cela réduit les incompréhensions, accélère l’exécution et garantit une bonne prise en compte des exigences — des analyses de risques et choix d’architecture jusqu’à la documentation d’audit et aux communications en situation d’incident.' ],
+      ["title" => 'Expertise avérée secteur public & privé',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M3 21h18v-2H3v2Zm2-4h14V3H5v14Zm2-2V5h10v10H7Zm1-8h2v2H8V7Zm0 4h2v2H8v-2Zm0 4h2v2H8v-2Zm4-8h2v2h-2V7Zm0 4h2v2h-2v-2Zm0 4h2v2h-2v-2Z"/></svg>',"desc" => 'Nous disposons d’une expérience concrète dans le secteur public comme dans le secteur privé, y compris dans des environnements critiques et fortement réglementés. Cette double expertise permet de concilier gouvernance, redevabilité et exigences de conformité côté public, avec l’agilité et la performance attendues côté privé. Résultat : des améliorations de sécurité mesurables, réalistes et compatibles avec vos contraintes opérationnelles.' ],
+    ],
     'contact_h' => 'Contact',
     'email' => 'Email',
     'phone' => 'Téléphone',
@@ -313,9 +326,9 @@ $t = [
     'nav' => ['Overzicht','Diensten & Producten','Waarom wij','Contact','Partners'],
     'hero' => 'Uw partner voor een <span class="highlight">veilige en flexibele</span> cloud',
     'overview_h' => 'Overzicht',
-    'overview_p1' => 'Consultancybedrijf opgericht in februari 2025, gespecialiseerd in cyberbeveiliging.',
-    'overview_p2' => 'CIDNS is een particuliere aanbieder van professionele IT-diensten. We rekenen op hooggekwalificeerde en gemotiveerde teams die een trouwe en tevreden klantenbasis bedienen. Onze werkcultuur is gericht op het consequent voldoen aan de technische, kwaliteits-, budgettaire en tijdsvereisten van onze klanten.',
-    'overview_p3' => 'Bij <strong>CIDNS</strong> ondersteunen we uw <strong>digitale transformatie</strong> met deskundige, veilige en bedrijfsgerichte cloudmigratieoplossingen. Onze missie is eenvoudig: zorgen voor een <strong>succesvolle cloudmigratie</strong>—van initiële audit tot productie—met gegarandeerde prestaties, beveiliging en compliance.',
+    'overview_p1' => '<strong>CIDNS, opgericht in februari 2025, is een onafhankelijk consultancybedrijf gespecialiseerd in cybersecurity en cloud.</strong>',
+    'overview_p2' => 'Wij ondersteunen organisaties bij het beveiligen en het governance-matig aansturen van hun digitale transformatie via deskundige, conforme en businessgerichte cybersecurity- en cloudoplossingen.',
+    'overview_p3' => 'Bij <strong>CIDNS</strong>, onze ervaren consultants leveren end-to-end diensten — van assessment en architectuur tot implementatie — met garantie op prestaties, veiligheid en naleving van regelgeving.',
     'services_h' => 'Diensten & Producten',
     'learn_more' => 'Meer weten',
     'labels' => [ 'new' => 'NIEUW' ],
@@ -323,15 +336,9 @@ $t = [
       'badge'  => 'Maandaanbieding',
       'h'      => 'NIS2 Compliance & Voorbereiding',
       'sub'    => 'End-to-end ondersteuning voor naleving van EU NIS2-verplichtingen.',
-      'points' => [
-        'Gap-analyse & geprioriteerde roadmap',
-        'Beleid & governance (ISO 27001-afstemming)',
-        '72u incident-meldingsplaybooks',
-        'Risicobeheer derde partijen / supply chain',
-        'vCISO & continue compliance'
-      ],
+      'points' => ['Gap-analyse & readiness roadmap', 'Policies, controls & evidence pack', 'Executive briefing & implementatie-ondersteuning'],
       'cta'   => 'Ontdek onze NIS2-dienst',
-      'href'  => 'nis2-compliance.php'
+      'href'  => 'Nis2-compliance.html'
     ],
     'services' => [
       ['Initiële audit & analyse', ['Bestaande infrastructuur, apps en processen in kaart brengen', 'Behoeften en technische/regulatoire beperkingen evalueren'], 'initial-audit-analysis.html'],
@@ -340,18 +347,24 @@ $t = [
       ['Cloudkeuze & governance', ['Begeleiding bij cloudselectie','IT-governance: security, compliance, supervisie implementeren'], 'cloud-governance-page.html'],
       ['Agile projectsturing', ['Agile methodes (Scrum, Kanban)','Deliverables opvolgen, stakeholders afstemmen'], 'agile-project-management-steering.html'],
       ['Levering & Operaties', ['Leveren volgens kwaliteit, timing en budget','Documentatie, overdracht en support'], '#'],
-      ['Managed Security Services (MSS)', ['24/7 monitoring','SIEM-integratie','Endpoint- en firewallbeheer','Maandelijkse compliancerapporten'], '#'],
-      ['Virtuele CISO (vCISO)', ['Security leadership on-demand','GDPR/ISO/NIS2-compliance','Risicobeheer','Rapportering aan het bestuur'], '#'],
-      ['Managed SOC', ['Volledig beheerd Security Operations Center','Logverzameling en correlatie','Continue dreigingsdetectie'], '#'],
-      ['Incidentrespons & Forensics', ['Onmiddellijke indamming','Digitale forensica','GDPR-conforme melding','Herstelplan en hardening-adviezen'], '#'],
-      ['Pen-tests & Red Teaming', ['Netwerk- en applicatietests','Realistische simulaties','Mitigatie-aanbevelingen'], '#'],
-      ['Security assessments & compliance-audits', ['GDPR, NIS2, ISO 27001 evaluaties','Gap-analyse','Begeleiding naar certificering'], '#'],
-      ['Security awareness training', ['Phishing-simulaties','Sectorspecifieke modules','Compliance-tracking'], '#'],
-      ['Kwetsbaarheidsbeheer', ['Regelmatige scans','CVSS-prioritering','ITSM-integratie','Continue monitoring'], '#'],
-      ['Threat Intelligence', ['Regionale dreigingsinformatie','Acteursprofielen','Realtime alerts','MITRE ATT&CK-integratie'], '#']
+      ['Managed Security Services (MSS)', ['24/7 monitoring','SIEM-integratie','Endpoint- en firewallbeheer','Maandelijkse compliancerapporten'], 'Managed-Security-Services.html'],
+      ['Virtuele CISO (vCISO)', ['Security leadership on-demand','GDPR/ISO/NIS2-compliance','Risicobeheer','Rapportering aan het bestuur'], 'Virtual-CISO.html'],
+      ['Managed SOC', ['Volledig beheerd Security Operations Center','Logverzameling en correlatie','Continue dreigingsdetectie'], 'Managed-SOC-Services.html'],
+      ['Incidentrespons & Forensics', ['Onmiddellijke indamming','Digitale forensica','GDPR-conforme melding','Herstelplan en hardening-adviezen'], 'Incident-Response-Forensics.html'],
+      ['Pen-tests & Red Teaming', ['Netwerk- en applicatietests','Realistische simulaties','Mitigatie-aanbevelingen'], 'Penetration-Testing-Red-Teaming.html'],
+      ['Security assessments & compliance-audits', ['GDPR, NIS2, ISO 27001 evaluaties','Gap-analyse','Begeleiding naar certificering'], 'Security-Assessments-Compliance-Audits.html'],
+      ['Security awareness training', ['Phishing-simulaties','Sectorspecifieke modules','Compliance-tracking'], 'Security-Awareness-Training.html'],
+      ['Kwetsbaarheidsbeheer', ['Regelmatige scans','CVSS-prioritering','ITSM-integratie','Continue monitoring'], 'Vulnerability-Management.html'],
+      ['Threat Intelligence', ['Regionale dreigingsinformatie','Acteursprofielen','Realtime alerts','MITRE ATT&CK-integratie'], 'Threat-Intelligence-Services.html']
     ],
+
     'whyus_h' => 'Waarom wij',
-    'whyus_list' => ['EU-gebaseerde infrastructuur','Sterke afstemming op Europese cyberwetten','Meertalige teams','Bewezen expertise in publieke & private sector'],
+    'whyus' => [
+      ["title" => 'EU-gebaseerde infrastructuur',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm0 2c1.3 0 2.6.4 3.6 1.1-.6.4-1.4.9-2 1.4-.7.6-1.3 1.2-1.6 1.9-.3-.7-.9-1.3-1.6-1.9-.6-.5-1.4-1-2-1.4A7.96 7.96 0 0112 4Zm-6.9 8c0-.7.1-1.4.3-2h3.1c-.1.6-.2 1.3-.2 2s.1 1.4.2 2H5.4a7.9 7.9 0 01-.3-2Zm1.1 4h3.5c.4 1.6 1.1 3 2.1 4.1A8.02 8.02 0 016.2 16Zm3.5-8H6.2A8.02 8.02 0 0111.7 3.9C10.7 5 10 6.4 9.6 8Zm2.4 12c-1.2-1.1-2.1-2.7-2.5-4.9h5c-.4 2.2-1.3 3.8-2.5 4.9Zm2.7-6H9.4c-.1-.6-.2-1.3-.2-2s.1-1.4.2-2h5.4c.1.6.2 1.3.2 2s-.1 1.4-.2 2Zm.6 8.1c1-1.1 1.7-2.5 2.1-4.1h3.5a8.02 8.02 0 01-5.6 4.1Zm2.3-6.1c.1-.6.2-1.3.2-2s-.1-1.4-.2-2h3.1c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.1Zm-.1-6c-.4-1.6-1.1-3-2.1-4.1A8.02 8.02 0 0117.8 8h-3.5Z"/></svg>',"desc" => 'Onze infrastructuur wordt volledig binnen de Europese Unie gehost en beheerd, zodat gegevens onder EU-jurisdictie blijven en datasoevereiniteit is gegarandeerd. Dit beperkt de blootstelling aan extraterritoriale verzoeken en vereenvoudigt de naleving voor gereguleerde organisaties. We werken met EU-datacenters, redundante architecturen en versterkte netwerksegmentatie om beschikbaarheid, veerkracht en business continuity te ondersteunen.' ],
+      ["title" => 'Afstemming op Europese cyberwetgeving',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2 20 6v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4Zm0 2.3L6 6.8V12c0 4 2.6 7.6 6 8.9 3.4-1.3 6-4.9 6-8.9V6.8l-6-2.5Z"/></svg>',"desc" => 'Compliance zit in het ontwerp. We stemmen governance, risicobeheer en technische controls af op Europese kaders zoals NIS2 en GDPR (en waar relevant ISO/IEC 27001 en DORA). Concreet betekent dit: traceerbare policies, auditklare bewijsvoering, incident response readiness en continue verbetering — zodat u verplichtingen efficiënt kunt invullen en zowel regelgevings- als operationele risico’s verlaagt.' ],
+      ["title" => 'Meertalige teams',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M4 4h16v10H7l-3 3V4Zm2 2v7.2L7.2 12H18V6H6Zm14 12H10v2h10l3 3v-9h-3v4Z"/></svg>',"desc" => 'Onze consultants werken dagelijks in het Frans, Nederlands en Engels en communiceren rechtstreeks met technische teams, directie en externe stakeholders. Dat vermindert misverstanden, versnelt de uitvoering en zorgt dat vereisten correct worden vastgelegd — van risicoanalyses en architectuurkeuzes tot auditdocumentatie en communicatie tijdens incidenten.' ],
+      ["title" => 'Bewezen expertise in publieke & private sector',"icon" => '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M3 21h18v-2H3v2Zm2-4h14V3H5v14Zm2-2V5h10v10H7Zm1-8h2v2H8V7Zm0 4h2v2H8v-2Zm0 4h2v2H8v-2Zm4-8h2v2h-2V7Zm0 4h2v2h-2v-2Zm0 4h2v2h-2v-2Z"/></svg>',"desc" => 'We hebben bewezen praktijkervaring in zowel de publieke sector als de private sector, inclusief gereguleerde en kritieke omgevingen. Die dubbele blik helpt ons publieke governance en verantwoording te combineren met de wendbaarheid en performance die in de private sector verwacht wordt. Het resultaat: praktische, meetbare security-verbeteringen die aansluiten op compliance-eisen en realistische operationele beperkingen.' ],
+    ],
     'contact_h' => 'Contact',
     'email' => 'E-mail',
     'phone' => 'Telefoon',
@@ -452,6 +465,13 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
     .alert.ok{background:#1e5f2a}
     .alert.err{background:#7a1f1f}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  
+    .cidns-dropdown details{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;margin:10px 0}
+    .cidns-dropdown summary{cursor:pointer;font-weight:600}
+    .whyus-summary{display:flex;align-items:center;gap:10px;list-style:none}
+    .whyus-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;opacity:.95}
+    .whyus-icon svg{display:block}
+    .cidns-dropdown p{margin:10px 0 0;opacity:.95}
   </style>
 </head>
 <body>
@@ -518,7 +538,21 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
 
   <section id="about" class="about-section">
     <h2><?= e($t[$lang]['whyus_h']) ?></h2>
-    <ul class="about-list"><?php foreach ($t[$lang]['whyus_list'] as $li): ?><li><?= e($li) ?></li><?php endforeach; ?></ul>
+    <div class="cidns-dropdown">
+      <?php foreach ($t[$lang]['whyus'] as $item): ?>
+        <details>
+          <summary>
+            <span class="whyus-summary">
+              <?php if (!empty($item['icon'])): ?>
+                <span class="whyus-icon"><?= $item['icon'] ?></span>
+              <?php endif; ?>
+              <span><?= e($item['title']) ?></span>
+            </span>
+          </summary>
+          <p><?= e($item['desc']) ?></p>
+        </details>
+      <?php endforeach; ?>
+    </div>
   </section>
 
   <section id="Partners">
