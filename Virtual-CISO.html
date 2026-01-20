@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Virtual CISO (vCISO)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Same background/foreground + theme as your existing file -->
+  <style>
+    :root {
+      --primary-color: #0D1B2A;
+      --secondary-color: #1B263B;
+      --accent-color: #4DA3FF;
+      --light-color: #F1FAEE;
+      --box-bg: #121212;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+      color: var(--light-color);
+    }
+
+    header {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 30px 40px 60px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: var(--accent-color);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      border-left: 6px solid var(--accent-color);
+      padding-left: 12px;
+      margin-top: 40px;
+      font-size: 1.8em;
+    }
+
+    .box {
+      background: var(--box-bg);
+      padding: 22px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    .box p, .box li {
+      line-height: 1.65;
+      color: var(--light-color);
+      opacity: 0.95;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Home button (same style) */
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: #00aaff;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      z-index: 1000;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 12px #00aaff, 0 0 20px #00aaff;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .home-button:hover {
+      background-color: #0088cc;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Back Home -->
+  <a href="index.php" class="home-button">
+    <span style="font-size:1.2em;">🏠</span>
+    <span>Back to Home</span>
+  </a>
+
+  <!-- Header -->
+  <header>
+    <h1>Virtual CISO (vCISO)</h1>
+    <p>Strategic, On-Demand Security Leadership for Business and Compliance</p>
+  </header>
+
+  <!-- Content -->
+  <section>
+
+    <div class="box">
+      <h2>On-Demand Security Leadership</h2>
+      <p>
+        Our Virtual CISO service provides experienced security leadership when you need it—without the cost
+        and complexity of a full-time executive hire. We align cybersecurity priorities with business goals,
+        define security strategy and roadmap, and ensure decisions are made with clear risk and impact visibility.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>GDPR / ISO / NIS2 Compliance</h2>
+      <p>
+        We help you structure and drive compliance programs across key frameworks and regulations such as
+        GDPR, ISO 27001, and NIS2. From gap assessments to policy development and evidence preparation, we
+        support audit-ready governance and ensure compliance efforts translate into measurable security improvements.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Risk Management</h2>
+      <p>
+        We establish and run a pragmatic risk management approach: identifying critical assets, assessing threats
+        and vulnerabilities, prioritizing remediation, and tracking risk treatment over time. This enables smarter
+        investment decisions, clearer accountability, and continuous improvement of your security posture.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Board Reporting</h2>
+      <p>
+        We translate technical security topics into executive-level insights. Through structured board reporting,
+        we provide clear KPIs, risk dashboards, incident summaries, and roadmap progress—helping leadership teams
+        make informed decisions and demonstrate governance and due diligence.
+      </p>
+    </div>
+
+  </section>
+
+</body>
+</html>
