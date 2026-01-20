@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CIDNS – Security Awareness Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --primary-color:#0D1B2A;
+      --secondary-color:#1B263B;
+      --accent-color:#4DA3FF;
+      --light-color:#F1FAEE;
+      --box-bg:#121212;
+    }
+
+    body{
+      margin:0;
+      font-family:'Poppins', Arial, sans-serif;
+      background:linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+      color:var(--light-color);
+    }
+
+    header{
+      background:var(--primary-color);
+      padding:32px 20px 60px;
+      text-align:center;
+      box-shadow:0 6px 12px rgba(0,0,0,.6);
+    }
+
+    header h1{margin:0;font-size:2.4em}
+    header p{margin-top:10px;font-size:1.1em;color:var(--accent-color)}
+
+    section{
+      max-width:1000px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    h2{
+      color:var(--accent-color);
+      border-left:6px solid var(--accent-color);
+      padding-left:12px;
+      margin:0 0 14px 0;
+      font-size:1.8em;
+    }
+
+    .box{
+      background:var(--box-bg);
+      padding:24px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.55);
+      margin-bottom:32px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .text p{margin:0 0 12px 0;line-height:1.65;opacity:.95}
+    .text ul{margin:10px 0 0 18px}
+    .text li{margin-bottom:8px;line-height:1.55;opacity:.95}
+
+    .diagram{
+      padding:14px;
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(77,163,255,.12), rgba(77,163,255,.04));
+      border:1px solid rgba(77,163,255,.35);
+    }
+
+    .diagram svg{max-width:100%;height:auto;display:block}
+
+    .caption{
+      font-size:.95em;
+      opacity:.9;
+      margin-bottom:10px;
+      text-align:center;
+    }
+
+    .home-button{
+      position:fixed;
+      top:12px;
+      right:20px;
+      background:#00aaff;
+      color:white;
+      padding:.5em 1em;
+      border-radius:6px;
+      text-decoration:none;
+      box-shadow:0 0 12px #00aaff, 0 0 20px #00aaff;
+      font-weight:600;
+      z-index:1000;
+      display:flex;
+      align-items:center;
+      gap:.5em;
+    }
+
+    .pill{
+      display:inline-block;
+      margin:6px 8px 0 0;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(77,163,255,.14);
+      border:1px solid rgba(77,163,255,.35);
+      color:var(--light-color);
+      font-size:.85em;
+      opacity:.95;
+    }
+
+    @media (max-width:860px){
+      .split{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.php" class="home-button">🏠 <span>Back to Home</span></a>
+
+<header>
+  <h1>CIDNS – Security Awareness Training</h1>
+  <p>Build a human firewall with phishing simulations, sector-focused modules, and measurable compliance tracking</p>
+</header>
+
+<section>
+
+  <!-- ====================================================== -->
+  <!-- Overview -->
+  <!-- ====================================================== -->
+  <div class="box">
+    <h2>Overview</h2>
+    <p style="margin:0;line-height:1.65;opacity:.95;">
+      <strong>CIDNS delivers Security Awareness Training</strong> designed to reduce human-related cyber risk.
+      We combine realistic phishing simulations, role-based learning, and compliance reporting so you can
+      demonstrate progress and meet regulatory expectations (e.g., GDPR, NIS2, ISO 27001-aligned awareness practices).
+    </p>
+    <div style="margin-top:10px;">
+      <span class="pill">Phishing simulations</span>
+      <span class="pill">Role & sector modules</span>
+      <span class="pill">Compliance tracking</span>
+      <span class="pill">Executive reporting</span>
+    </div>
+  </div>
+
+  <!-- ====================================================== -->
+  <!-- 1) Phishing simulations -->
+  <!-- ====================================================== -->
+  <div class="box">
+    <h2>Phishing Simulations</h2>
+
+    <div class="split">
+      <div class="text">
+        <p>
+          <strong>CIDNS runs controlled phishing simulations</strong> to measure exposure, reinforce safe behavior,
+          and reduce click/credential submission rates over time—without disrupting operations.
+        </p>
+        <ul>
+          <li><strong>Campaign design:</strong> realistic scenarios aligned to your threat landscape and business context.</li>
+          <li><strong>Safe execution:</strong> whitelisting, opt-out rules, and internal comms coordination.</li>
+          <li><strong>Instant learning:</strong> just-in-time micro-training after user actions (click / report / ignore).</li>
+          <li><strong>KPIs:</strong> click rate, report rate, repeat-offender reduction, time-to-report.</li>
+        </ul>
+      </div>
+
+      <div class="diagram">
+        <div class="caption">CIDNS runs simulations → captures behavior → delivers targeted coaching</div>
+
+        <!-- Diagram: Phishing simulation loop -->
+        <svg viewBox="0 0 520 240" aria-label="Phishing simulation lifecycle">
+          <defs>
+            <marker id="phArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0,10 3,0 6" fill="#4DA3FF"></polygon>
+            </marker>
+          </defs>
+
+          <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+            <rect x="20"  y="92" width="150" height="58" rx="12"></rect>
+            <rect x="185" y="30" width="150" height="58" rx="12"></rect>
+            <rect x="185" y="154" width="150" height="58" rx="12"></rect>
+            <rect x="350" y="92" width="150" height="58" rx="12"></rect>
+          </g>
+
+          <g fill="#F1FAEE" font-size="13" font-weight="600">
+            <text x="46"  y="122">Simulation</text>
+            <text x="46"  y="140">Campaign</text>
+
+            <text x="214" y="60">User</text>
+            <text x="214" y="78">Action</text>
+
+            <text x="205" y="184">Micro</text>
+            <text x="205" y="202">Training</text>
+
+            <text x="386" y="122">Metrics</text>
+            <text x="386" y="140">&amp; Reporting</text>
+          </g>
+
+          <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#phArrow)">
+            <line x1="170" y1="121" x2="185" y2="59"></line>
+            <line x1="170" y1="121" x2="185" y2="183"></line>
+            <line x1="335" y1="59"  x2="350" y2="121"></line>
+            <line x1="335" y1="183" x2="350" y2="121"></line>
+          </g>
+
+          <g fill="rgba(77,163,255,.16)" stroke="rgba(77,163,255,.35)">
+            <rect x="20" y="10" width="480" height="18" rx="9"></rect>
+          </g>
+          <text x="34" y="23" fill="#F1FAEE" font-size="12">
+            Outcome: reduced risk through measurable behavior change
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================== -->
+  <!-- 2) Sector-specific modules -->
+  <!-- ====================================================== -->
+  <div class="box">
+    <h2>Sector-Specific Modules</h2>
+
+    <div class="split">
+      <div class="text">
+        <p>
+          <strong>CIDNS provides sector and role-adapted training modules</strong> so employees learn what matters
+          for their daily context (e.g., public sector, healthcare, finance, IT operations, executives).
+        </p>
+        <ul>
+          <li><strong>Role-based learning:</strong> executives, IT/admins, HR, finance, operations.</li>
+          <li><strong>Sector scenarios:</strong> data handling, third-party risk, social engineering, ransomware.</li>
+          <li><strong>Micro-formats:</strong> short modules + quizzes to increase completion rates.</li>
+          <li><strong>Localization:</strong> multilingual content aligned to your internal policies and processes.</li>
+        </ul>
+      </div>
+
+      <div class="diagram">
+        <div class="caption">From generic awareness to role &amp; sector learning paths</div>
+
+        <!-- Diagram: Learning paths -->
+        <svg viewBox="0 0 520 240" aria-label="Sector-specific learning paths">
+          <defs>
+            <marker id="lpArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0,10 3,0 6" fill="#4DA3FF"></polygon>
+            </marker>
+          </defs>
+
+          <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+            <rect x="20" y="92" width="160" height="58" rx="12"></rect>
+            <rect x="210" y="30" width="290" height="52" rx="12"></rect>
+            <rect x="210" y="94" width="290" height="52" rx="12"></rect>
+            <rect x="210" y="158" width="290" height="52" rx="12"></rect>
+          </g>
+
+          <g fill="#F1FAEE" font-size="13" font-weight="600">
+            <text x="44" y="122">Core</text>
+            <text x="44" y="140">Awareness</text>
+
+            <text x="232" y="62">Path A: Executives &amp; Managers</text>
+            <text x="232" y="126">Path B: Finance / HR / Operations</text>
+            <text x="232" y="190">Path C: IT / Admin / Security</text>
+          </g>
+
+          <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#lpArrow)">
+            <line x1="180" y1="121" x2="210" y2="56"></line>
+            <line x1="180" y1="121" x2="210" y2="120"></line>
+            <line x1="180" y1="121" x2="210" y2="184"></line>
+          </g>
+
+          <g fill="rgba(77,163,255,.16)" stroke="rgba(77,163,255,.35)">
+            <rect x="20" y="10" width="480" height="18" rx="9"></rect>
+          </g>
+          <text x="34" y="23" fill="#F1FAEE" font-size="12">
+            Outcome: higher relevance → higher completion → better security habits
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================== -->
+  <!-- 3) Compliance tracking -->
+  <!-- ====================================================== -->
+  <div class="box">
+    <h2>Compliance Tracking</h2>
+
+    <div class="split">
+      <div class="text">
+        <p>
+          <strong>CIDNS delivers compliance-oriented tracking</strong> so you can demonstrate participation,
+          improvement, and governance. Reports can be aligned to your internal control framework and audit needs.
+        </p>
+        <ul>
+          <li><strong>Tracking:</strong> completion rates, quiz scores, campaign results, reporting behavior.</li>
+          <li><strong>Evidence:</strong> audit-ready logs and summaries for internal/external stakeholders.</li>
+          <li><strong>Governance:</strong> monthly/quarterly dashboards and management reporting.</li>
+          <li><strong>Continuous improvement:</strong> focus areas updated based on results and emerging threats.</li>
+        </ul>
+      </div>
+
+      <div class="diagram">
+        <div class="caption">Measurable training results → evidence → audit-ready reporting</div>
+
+        <!-- Diagram: Evidence & reporting -->
+        <svg viewBox="0 0 520 240" aria-label="Compliance tracking to audit evidence">
+          <defs>
+            <marker id="ctArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0,10 3,0 6" fill="#4DA3FF"></polygon>
+            </marker>
+          </defs>
+
+          <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+            <rect x="20"  y="92" width="150" height="58" rx="12"></rect>
+            <rect x="190" y="92" width="150" height="58" rx="12"></rect>
+            <rect x="360" y="92" width="140" height="58" rx="12"></rect>
+          </g>
+
+          <g fill="#F1FAEE" font-size="13" font-weight="600">
+            <text x="50"  y="122">Training</text>
+            <text x="50"  y="140">Data</text>
+
+            <text x="220" y="122">Evidence</text>
+            <text x="220" y="140">Pack</text>
+
+            <text x="392" y="122">Audit /</text>
+            <text x="392" y="140">Dashboard</text>
+          </g>
+
+          <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#ctArrow)">
+            <line x1="170" y1="121" x2="190" y2="121"></line>
+            <line x1="340" y1="121" x2="360" y2="121"></line>
+          </g>
+
+          <g fill="rgba(77,163,255,.16)" stroke="rgba(77,163,255,.35)">
+            <rect x="20" y="160" width="480" height="44" rx="12"></rect>
+          </g>
+          <text x="38" y="187" fill="#F1FAEE" font-size="12">
+            Metrics: completion • quiz score • click/report rate • repeat offender reduction • trend lines
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================== -->
+  <!-- Partnership / Ecosystem (safe wording, no invented logos) -->
+  <!-- ====================================================== -->
+  <div class="box">
+    <h2>Partnership & Ecosystem</h2>
+    <div class="split">
+      <div class="text">
+        <p>
+          CIDNS is <strong>vendor-agnostic</strong> and can operate within your existing environment.
+          We integrate awareness workflows with the tools you already use (email and collaboration, ticketing, reporting),
+          and we can coordinate with your internal teams and external stakeholders (e.g., MSP/MSSP) to ensure consistent rollout.
+        </p>
+        <ul>
+          <li><strong>Integrations:</strong> alignment with your email/collaboration stack, identity policies, and reporting needs.</li>
+          <li><strong>Operational partnership:</strong> coordination with IT, HR, and Security teams for governance and communications.</li>
+          <li><strong>Program governance:</strong> cadence, ownership, and executive reporting aligned to your compliance objectives.</li>
+        </ul>
+        <p style="margin-top:12px;opacity:.9;">
+          If you want, CIDNS can include a “Partner” section with specific logos once you confirm the partner list you want displayed.
+        </p>
+      </div>
+
+      <div class="diagram">
+        <div class="caption">Awareness program aligned with your ecosystem and governance</div>
+
+        <!-- Diagram: Ecosystem alignment -->
+        <svg viewBox="0 0 520 240" aria-label="Awareness governance ecosystem">
+          <defs>
+            <marker id="ecoArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0,10 3,0 6" fill="#4DA3FF"></polygon>
+            </marker>
+          </defs>
+
+          <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+            <rect x="180" y="92" width="160" height="58" rx="12"></rect>
+
+            <rect x="20"  y="30" width="140" height="52" rx="12"></rect>
+            <rect x="360" y="30" width="140" height="52" rx="12"></rect>
+
+            <rect x="20"  y="156" width="140" height="52" rx="12"></rect>
+            <rect x="360" y="156" width="140" height="52" rx="12"></rect>
+          </g>
+
+          <g fill="#F1FAEE" font-size="13" font-weight="600">
+            <text x="206" y="122">CIDNS</text>
+            <text x="206" y="140">Awareness Program</text>
+
+            <text x="44"  y="62">IT / Security</text>
+            <text x="388" y="62">HR / Comms</text>
+
+            <text x="44"  y="188">Tools &amp; Data</text>
+            <text x="382" y="188">Management</text>
+          </g>
+
+          <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#ecoArrow)">
+            <line x1="160" y1="56"  x2="180" y2="110"></line>
+            <line x1="500" y1="56"  x2="340" y2="110"></line>
+            <line x1="160" y1="182" x2="180" y2="132"></line>
+            <line x1="500" y1="182" x2="340" y2="132"></line>
+          </g>
+
+          <g fill="rgba(77,163,255,.16)" stroke="rgba(77,163,255,.35)">
+            <rect x="20" y="10" width="480" height="18" rx="9"></rect>
+          </g>
+          <text x="34" y="23" fill="#F1FAEE" font-size="12">
+            Outcome: consistent rollout, measurable results, and governance-ready evidence
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
