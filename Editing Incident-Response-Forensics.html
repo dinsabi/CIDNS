@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Incident Response &amp; Forensics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --primary-color:#0D1B2A;
+      --secondary-color:#1B263B;
+      --accent-color:#4DA3FF;
+      --light-color:#F1FAEE;
+      --box-bg:#121212;
+    }
+
+    body{
+      margin:0;
+      font-family:'Poppins', Arial, sans-serif;
+      background:linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+      color:var(--light-color);
+    }
+
+    header{
+      background:var(--primary-color);
+      color:var(--light-color);
+      padding:30px 40px 60px;
+      text-align:center;
+      box-shadow:0 6px 12px rgba(0,0,0,0.6);
+    }
+
+    header h1{
+      margin:0;
+      font-size:2.4em;
+    }
+
+    header p{
+      font-size:1.1em;
+      color:var(--accent-color);
+    }
+
+    section{
+      max-width:1000px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    h2{
+      color:var(--accent-color);
+      border-left:6px solid var(--accent-color);
+      padding-left:12px;
+      margin:0 0 14px 0;
+      font-size:1.8em;
+    }
+
+    .box{
+      background:var(--box-bg);
+      padding:22px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.5);
+      margin-bottom:30px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .text p{
+      margin:0 0 12px 0;
+      line-height:1.65;
+      opacity:0.95;
+    }
+
+    .text ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+
+    .text li{
+      margin:0 0 8px 0;
+      line-height:1.55;
+      opacity:0.95;
+    }
+
+    .diagram{
+      padding:12px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(77,163,255,0.12), rgba(77,163,255,0.04));
+      border:1px solid rgba(77,163,255,0.35);
+    }
+
+    .caption{
+      margin-top:10px;
+      font-size:0.95em;
+      opacity:0.9;
+      text-align:center;
+    }
+
+    /* Home button */
+    .home-button{
+      position:fixed;
+      top:10px;
+      right:20px;
+      background-color:#00aaff;
+      color:white;
+      padding:0.5em 1em;
+      border-radius:5px;
+      text-decoration:none;
+      font-size:1em;
+      z-index:1000;
+      transition:background-color 0.3s ease, transform 0.2s ease;
+      box-shadow:0 0 12px #00aaff, 0 0 20px #00aaff;
+      display:flex;
+      align-items:center;
+      gap:0.5em;
+    }
+
+    .home-button:hover{
+      background-color:#0088cc;
+      transform:scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .split{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.php" class="home-button">
+    <span style="font-size:1.2em;">🏠</span><span>Back to Home</span>
+  </a>
+
+  <header>
+    <h1>Incident Response &amp; Forensics</h1>
+    <p>Rapid Containment, Evidence Preservation, and Secure Recovery</p>
+  </header>
+
+  <section>
+
+    <!-- 1) Immediate Containment -->
+    <div class="box">
+      <h2>Immediate Containment</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            We act immediately to stop ongoing attacker activity and reduce operational impact.
+            The first objective is to prevent lateral movement, data exfiltration, and re-infection.
+          </p>
+          <ul>
+            <li><strong>Isolation:</strong> segment affected hosts, disable compromised accounts, restrict remote access.</li>
+            <li><strong>Blocking:</strong> firewall/EDR containment actions, IOC blocking, suspicious domain/IP filtering.</li>
+            <li><strong>Evidence-first:</strong> preserve volatile data (memory/process/network) before any destructive action.</li>
+            <li><strong>Coordination:</strong> align IT, security, and business stakeholders with a clear action plan.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 210" width="100%" height="auto" role="img" aria-label="Containment flow: isolate, block, preserve evidence, stabilize">
+            <defs>
+              <marker id="ah1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="20"  y="28" width="220" height="44" rx="12"/>
+              <rect x="20"  y="86" width="220" height="44" rx="12"/>
+              <rect x="20"  y="144" width="220" height="44" rx="12"/>
+              <rect x="270" y="86" width="230" height="44" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="14" font-weight="600">
+              <text x="40" y="56">1) Isolate affected systems</text>
+              <text x="40" y="114">2) Block malicious activity</text>
+              <text x="40" y="172">3) Preserve evidence</text>
+              <text x="295" y="114">Stabilize services</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#ah1)">
+              <line x1="130" y1="72" x2="130" y2="86"/>
+              <line x1="130" y1="130" x2="130" y2="144"/>
+              <line x1="240" y1="108" x2="270" y2="108"/>
+            </g>
+          </svg>
+
+          <div class="caption">Contain fast, preserve evidence, restore control.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2) Digital Forensics -->
+    <div class="box">
+      <h2>Digital Forensics</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            Our forensic investigation determines <strong>what happened</strong>, <strong>how it happened</strong>,
+            and <strong>what was impacted</strong>. We reconstruct the attacker timeline and validate scope with
+            defensible methods (integrity, traceability, and chain-of-custody where required).
+          </p>
+          <ul>
+            <li><strong>Collection:</strong> endpoints/servers images, cloud/identity logs, EDR telemetry, network traces.</li>
+            <li><strong>Analysis:</strong> persistence, privilege escalation, lateral movement, exfiltration indicators.</li>
+            <li><strong>Attribution support:</strong> IOCs, TTP mapping, campaign clustering (when feasible).</li>
+            <li><strong>Outcome:</strong> incident timeline, root cause, impacted assets, and evidence package.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 240" width="100%" height="auto" role="img" aria-label="Forensics correlation: endpoints and logs to timeline and root cause">
+            <defs>
+              <marker id="ah2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="18"  y="35"  width="210" height="60" rx="12"/>
+              <rect x="18"  y="145" width="210" height="60" rx="12"/>
+              <rect x="290" y="90"  width="210" height="60" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="14" font-weight="600">
+              <text x="38" y="70">Endpoints &amp; Servers</text>
+              <text x="38" y="180">Logs &amp; Network Traffic</text>
+              <text x="318" y="125">Timeline &amp; Root Cause</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#ah2)">
+              <line x1="228" y1="65"  x2="290" y2="110"/>
+              <line x1="228" y1="175" x2="290" y2="130"/>
+            </g>
+          </svg>
+
+          <div class="caption">Correlate evidence into a defensible incident narrative.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3) GDPR Notification -->
+    <div class="box">
+      <h2>GDPR-Compliant Notification</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            We help you assess whether the incident qualifies as a personal data breach and prepare compliant
+            communication packages. This includes impact assessment, scope validation, and documentation needed
+            for regulators and stakeholders.
+          </p>
+          <ul>
+            <li><strong>Assessment:</strong> personal data exposure, affected data subjects, risk severity.</li>
+            <li><strong>Documentation:</strong> incident summary, timeline, controls in place, remediation actions.</li>
+            <li><strong>Notification support:</strong> regulator-facing wording and evidence alignment.</li>
+            <li><strong>Consistency:</strong> ensure communications match forensic findings and recovery actions.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 210" width="100%" height="auto" role="img" aria-label="GDPR notification decision and documentation flow">
+            <defs>
+              <marker id="ah3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="20" y="35" width="210" height="52" rx="12"/>
+              <rect x="290" y="35" width="210" height="52" rx="12"/>
+              <rect x="20" y="123" width="210" height="52" rx="12"/>
+              <rect x="290" y="123" width="210" height="52" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="14" font-weight="600">
+              <text x="40" y="67">Breach Assessment</text>
+              <text x="312" y="67">Impact &amp; Risk</text>
+              <text x="40" y="155">Evidence Pack</text>
+              <text x="312" y="155">Notification Draft</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#ah3)">
+              <line x1="230" y1="61" x2="290" y2="61"/>
+              <line x1="125" y1="87" x2="125" y2="123"/>
+              <line x1="395" y1="87" x2="395" y2="123"/>
+              <line x1="230" y1="149" x2="290" y2="149"/>
+            </g>
+          </svg>
+
+          <div class="caption">Align legal obligations with verified facts and evidence.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4) Recovery + Hardening -->
+    <div class="box">
+      <h2>Recovery Planning &amp; Hardening Recommendations</h2>
+
+      <div class="split">
+        <div class="text">
+          <p>
+            We support a secure recovery that restores services while eliminating attacker footholds.
+            The goal is not just to “get back online”, but to reduce recurrence and improve resilience.
+          </p>
+          <ul>
+            <li><strong>Recovery:</strong> restore from clean backups, validate integrity, re-enable services safely.</li>
+            <li><strong>Eradication:</strong> remove persistence mechanisms, rotate credentials, close exposed paths.</li>
+            <li><strong>Hardening:</strong> MFA/conditional access, segmentation, patching, logging improvements.</li>
+            <li><strong>Deliverables:</strong> prioritized remediation roadmap with quick wins + strategic actions.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 520 220" width="100%" height="auto" role="img" aria-label="Recovery path: restore, validate, eradicate, harden">
+            <defs>
+              <marker id="ah4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4DA3FF"/>
+              </marker>
+            </defs>
+
+            <g fill="#121212" stroke="#4DA3FF" stroke-width="2">
+              <rect x="20"  y="80" width="115" height="54" rx="12"/>
+              <rect x="150" y="80" width="115" height="54" rx="12"/>
+              <rect x="280" y="80" width="115" height="54" rx="12"/>
+              <rect x="410" y="80" width="90"  height="54" rx="12"/>
+            </g>
+
+            <g fill="#F1FAEE" font-size="14" font-weight="600">
+              <text x="42"  y="112">Restore</text>
+              <text x="170" y="112">Validate</text>
+              <text x="304" y="112">Eradicate</text>
+              <text x="425" y="112">Harden</text>
+            </g>
+
+            <g stroke="#4DA3FF" stroke-width="2" marker-end="url(#ah4)">
+              <line x1="135" y1="107" x2="150" y2="107"/>
+              <line x1="265" y1="107" x2="280" y2="107"/>
+              <line x1="395" y1="107" x2="410" y2="107"/>
+            </g>
+
+            <g fill="rgba(77,163,255,0.18)">
+              <rect x="20" y="150" width="480" height="40" rx="10"/>
+            </g>
+            <text x="34" y="176" fill="#F1FAEE" font-size="13">
+              Output: remediation roadmap + hardening recommendations
+            </text>
+          </svg>
+
+          <div class="caption">Recover safely, then raise the security baseline.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
