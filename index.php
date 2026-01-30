@@ -186,7 +186,7 @@ $t = [
     'meta_desc' => 'CIDNS - IT Consulting Company',
     'title' => 'CIDNS - IT Consulting',
     'nav' => ['Overview','Services & Products','Why Us','Contact','Partners'],
-    'hero' => 'Your partner for a <span class="highlight">secure and agile</span> cloud',
+    'hero' => 'We Secure Your Digital Future —<span class="highlight"><B>Compliance, Detection, Response & Resilience</B></span> — End-to-End Cybersecurity & Cloud Services.',
     'overview_h' => 'Overview',
     'overview_p1' => '<strong>Founded in February 2025, CIDNS is an independent cybersecurity and cloud consulting company.</strong>',
     'overview_p2' => 'We support organizations in securing and governing their digital transformation through expert, compliant, and business-focused cybersecurity and cloud solutions.',
@@ -195,7 +195,7 @@ $t = [
     'learn_more' => 'Learn more',
     'labels' => [ 'new' => 'NEW' ],
     'nis2' => [
-      'badge'  => 'Offer of the month',
+      'badge'  => 'Exclusive Offer',
       'h'      => 'NIS2 Compliance & Readiness',
       'sub'    => 'End-to-end support to meet EU NIS2 cybersecurity obligations.',
       'points' => ['Gap analysis & readiness roadmap', 'Policies, controls & evidence pack', 'Executive briefing & implementation support'],
@@ -208,7 +208,7 @@ $t = [
       ['Target Architecture Design', ['Create cloud architecture (AWS, Azure, GCP, or hybrid)','Select technologies: Kubernetes, OpenShift, IaaS/PaaS/SaaS','Optimize costs and performance'], 'target-architecture-design.html'],
       ['Cloud Provider Selection & Governance', ['Assist in cloud provider selection','Implement IT governance: security, compliance, supervision'], 'cloud-governance-page.html'],
       ['Agile Project Management & Steering', ['Agile methodology (Scrum, Kanban)','Track deliverables, coordinate stakeholders'], 'agile-project-management-steering.html'],
-      ['Delivery and Operations', ['Deliver according to quality, timeline, and budget','Provide documentation, handover, and support'], '#'],
+      ['Delivery and Operations', ['Deliver according to quality, timeline, and budget','Provide documentation, handover, and support'], 'Delivery-and-Operations.html'],
       ['Managed Security Services (MSS)', ['24/7 monitoring','SIEM integration','Endpoint and firewall management','Monthly compliance reporting'], 'Managed-Security-Services.html'],
       ['Virtual CISO (vCISO)', ['On-demand security leadership','GDPR/ISO/NIS2 compliance','Risk management','Board reporting'], 'Virtual-CISO.html'],
       ['Managed SOC Services', ['Fully managed Security Operations Center','Log collection and correlation','Continuous threat detection'], 'Managed-SOC-Services.html'],
@@ -263,7 +263,7 @@ $t = [
     'meta_desc' => 'CIDNS - Société de conseil en informatique',
     'title' => 'CIDNS - Conseil en IT',
     'nav' => ['Aperçu','Services & Produits','Pourquoi nous','Contact','Partenaires'],
-    'hero' => 'Votre partenaire pour un cloud <span class="highlight">sécurisé et agile</span>',
+    'hero' => 'Nous sécurisons votre avenir numérique — <span class="highlight"><B>Conformité, Détection, Réponse et Résilience</B></span> — Services de cybersécurité et cloud de bout en bout.',
     'overview_h' => 'Aperçu',
     'overview_p1' => '<strong>Fondée en février 2025, CIDNS est une société indépendante de conseil en cybersécurité et en cloud</strong>',
     'overview_p2' => 'Nous accompagnons les organisations dans la sécurisation et la gouvernance de leur transformation digitale grâce à des solutions de cybersécurité et de cloud expertes, conformes et orientées métier.',
@@ -272,7 +272,7 @@ $t = [
     'learn_more' => 'En savoir plus',
     'labels' => [ 'new' => 'Nouveauté' ],
     'nis2' => [
-      'badge'  => 'Offre du mois',
+      'badge'  => 'Offre Exclusive',
       'h'      => 'Conformité & Préparation NIS2',
       'sub'    => 'Accompagnement de bout en bout pour répondre aux obligations NIS2 dans l’UE.',
       'points' => ['Analyse d’écart & feuille de route', 'Politiques, contrôles & dossier de preuves', 'Briefing direction & support de mise en œuvre'],
@@ -285,7 +285,7 @@ $t = [
       ['Conception d’architecture cible', ['Architecture cloud (AWS, Azure, GCP ou hybride)','Choix technos : Kubernetes, OpenShift, IaaS/PaaS/SaaS','Optimisation coûts & performances'], 'target-architecture-design.html'],
       ['Choix du fournisseur & Gouvernance', ['Aide au choix du cloud','Mise en place de la gouvernance IT : sécurité, conformité, supervision'], 'cloud-governance-page.html'],
       ['Pilotage & gestion de projet agile', ['Méthodologies agiles (Scrum, Kanban)','Suivi des livrables, coordination parties prenantes'], 'agile-project-management-steering.html'],
-      ['Delivery & Opérations', ['Livraison selon qualité, délais, budget','Documentation, transfert et support'], '#'],
+      ['Delivery & Opérations', ['Livraison selon qualité, délais, budget','Documentation, transfert et support'], 'Delivery-and-Operations.html'],
       ['Managed Security Services (MSS)', ['Supervision 24/7','Intégration SIEM','Gestion endpoints & firewall','Rapports mensuels de conformité'], 'Managed-Security-Services.html'],
       ['vCISO (CISO virtuel)', ['Leadership sécurité à la demande','Conformité RGPD/ISO/NIS2','Gestion des risques','Reporting au board'], 'Virtual-CISO.html'],
       ['SOC managé', ['Centre Opérationnel de Sécurité managé','Collecte et corrélation des logs','Détection continue des menaces'], 'Managed-SOC-Services.html'],
@@ -324,7 +324,7 @@ $t = [
     'meta_desc' => 'CIDNS - IT-adviesbureau',
     'title' => 'CIDNS - IT Consulting',
     'nav' => ['Overzicht','Diensten & Producten','Waarom wij','Contact','Partners'],
-    'hero' => 'Uw partner voor een <span class="highlight">veilige en flexibele</span> cloud',
+    'hero' => 'Wij beveiligen uw digitale toekomst — <span class="highlight"><B>Compliance, Detectie, Respons en Veerkracht</B></span> — End-to-End Cybersecurity- en Cloudservices.',
     'overview_h' => 'Overzicht',
     'overview_p1' => '<strong>CIDNS, opgericht in februari 2025, is een onafhankelijk consultancybedrijf gespecialiseerd in cybersecurity en cloud.</strong>',
     'overview_p2' => 'Wij ondersteunen organisaties bij het beveiligen en het governance-matig aansturen van hun digitale transformatie via deskundige, conforme en businessgerichte cybersecurity- en cloudoplossingen.',
@@ -333,7 +333,7 @@ $t = [
     'learn_more' => 'Meer weten',
     'labels' => [ 'new' => 'NIEUW' ],
     'nis2' => [
-      'badge'  => 'Maandaanbieding',
+      'badge'  => 'Exclusieve Aanbieding',
       'h'      => 'NIS2 Compliance & Voorbereiding',
       'sub'    => 'End-to-end ondersteuning voor naleving van EU NIS2-verplichtingen.',
       'points' => ['Gap-analyse & readiness roadmap', 'Policies, controls & evidence pack', 'Executive briefing & implementatie-ondersteuning'],
@@ -346,7 +346,7 @@ $t = [
       ['Doelarchitectuur ontwerpen', ['Cloudarchitectuur (AWS, Azure, GCP of hybride)','Technologiekeuze: Kubernetes, OpenShift, IaaS/PaaS/SaaS','Kosten- en prestatieoptimalisatie'], 'target-architecture-design.html'],
       ['Cloudkeuze & governance', ['Begeleiding bij cloudselectie','IT-governance: security, compliance, supervisie implementeren'], 'cloud-governance-page.html'],
       ['Agile projectsturing', ['Agile methodes (Scrum, Kanban)','Deliverables opvolgen, stakeholders afstemmen'], 'agile-project-management-steering.html'],
-      ['Levering & Operaties', ['Leveren volgens kwaliteit, timing en budget','Documentatie, overdracht en support'], '#'],
+      ['Levering & Operaties', ['Leveren volgens kwaliteit, timing en budget','Documentatie, overdracht en support'], 'Delivery-and-Operations.html'],
       ['Managed Security Services (MSS)', ['24/7 monitoring','SIEM-integratie','Endpoint- en firewallbeheer','Maandelijkse compliancerapporten'], 'Managed-Security-Services.html'],
       ['Virtuele CISO (vCISO)', ['Security leadership on-demand','GDPR/ISO/NIS2-compliance','Risicobeheer','Rapportering aan het bestuur'], 'Virtual-CISO.html'],
       ['Managed SOC', ['Volledig beheerd Security Operations Center','Logverzameling en correlatie','Continue dreigingsdetectie'], 'Managed-SOC-Services.html'],
@@ -398,7 +398,7 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    :root { --primary-color:#0D1B2A; --secondary-color:#1B263B; --accent-color:#4DA3FF; --light-color:#F1FAEE; }
+    :root { --primary-color:#0D1B2A; --secondary-color:#1B263B; --accent-color:#4DA3FF; --light-color:#F1FAEE; --surface-1: rgba(255,255,255,0.06); --surface-2: rgba(77,163,255,0.10); --shadow-1: 0 6px 18px rgba(0,0,0,0.45); --shadow-2: 0 12px 28px rgba(0,0,0,0.55); }
     *{box-sizing:border-box}
     body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(to bottom right,#1B263B,#0D1B2A);color:var(--light-color);line-height:1.6}
     header{background-image:url('images/ruban_sc.jpeg');background-size:cover;background-position:center;padding:40px 20px;display:flex;align-items:center;gap:20px;box-shadow:0 6px 12px rgba(0,0,0,.6)}
@@ -416,8 +416,10 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
     .lang-switch a:hover{background:var(--accent-color);color:#fff}
 
     .marquee-viewport{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);height:3.6em;padding-top:0.35em;margin-top:8px;margin-bottom:10px}
-    .marquee-track{position:absolute;top:0.15em;white-space:nowrap;font-size:clamp(1.6rem,3vw,2.6rem);font-family:'Great Vibes','Poppins',cursive;font-weight:400;line-height:1.1;letter-spacing:.5px;will-change:transform;animation:marqueeAcross 22s linear infinite;color:#cbe86b;background-image:linear-gradient(90deg,#27ae60,#8bc34a,#d4e157,#f4d03f);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-    @keyframes marqueeAcross{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+    .marquee-track{position:absolute;top:0.15em;white-space:nowrap;font-size:clamp(1.6rem,3vw,2.6rem);font-family:'Great Vibes','Poppins',cursive;font-weight:400;line-height:1.1;letter-spacing:.5px;will-change:transform;animation:fadeInMarquee 0.4s ease-out forwards,marqueeAcross 40s linear infinite;color:#cbe86b;background-image:linear-gradient(90deg,var(--accent-color),#2CC9FF,var(--accent-color));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    @keyframes fadeInMarquee{from { opacity: 0; } to   { opacity: 1; }}
+    @keyframes marqueeAcross {0%{transform:translateX(120%)}100%{transform:translateX(-120%)}}
+    
 
     section{padding:60px 20px;max-width:1200px;margin:auto}
     h2{color:var(--accent-color);font-size:2.2em;margin-bottom:25px;border-left:6px solid var(--accent-color);padding-left:12px;text-transform:uppercase;letter-spacing:1px}
@@ -428,8 +430,8 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
 
     .nis2-bright{position:relative;background: radial-gradient(120% 140% at 0% 0%, rgba(77,163,255,.35), rgba(27,38,59,.9));border:1px solid rgba(77,163,255,.55);border-radius:16px;padding:20px 18px;box-shadow:0 0 30px rgba(77,163,255,.45),0 12px 28px rgba(0,0,0,.45), inset 0 0 18px rgba(77,163,255,.18);color:#EAF4FF;}
     .nis2-bright .badge{display:inline-block;background:#4DA3FF;color:#0D1B2A;font-weight:900;padding:4px 10px;border-radius:999px;font-size:.78rem;letter-spacing:.3px;box-shadow:0 0 10px rgba(77,163,255,.8);}
-    .new-badge{display:block;font-size:1.3rem;font-style:italic;font-weight:900;margin-bottom:6px;background:linear-gradient(90deg,#2ecc71,#f1c40f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 6px rgba(241,196,15,0.6),0 0 12px rgba(46,204,113,0.5);animation:glowPulse 2s infinite alternate;}
-    @keyframes glowPulse {0% {text-shadow:0 0 6px rgba(241,196,15,0.6),0 0 12px rgba(46,204,113,0.5);}100% {text-shadow:0 0 16px rgba(241,196,15,1),0 0 24px rgba(46,204,113,0.8);}}
+    .new-badge{display:block;font-size:1.3rem;font-style:italic;font-weight:900;margin-bottom:6px;background:linear-gradient(90deg,var(--accent-color),#2CC9FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 10px rgba(77,163,255,0.35);animation:glowPulse 2.2s infinite alternate;}
+    @keyframes glowPulse {0% {text-shadow:0 0 10px rgba(77,163,255,0.25),0 0 16px rgba(44,201,255,0.18);}100% {text-shadow:0 0 18px rgba(77,163,255,0.55),0 0 26px rgba(44,201,255,0.35);}}100% {text-shadow:0 0 16px rgba(241,196,15,1),0 0 24px rgba(46,204,113,0.8);}}
     .nis2-bright h3{margin:.5rem 0 .3rem 0;font-size:1.5rem}
     .nis2-bright p{margin:.25rem 0 .75rem 0;opacity:.96}
     .nis2-bright ul{margin:.4rem 0 .8rem 1.1rem}
@@ -438,7 +440,7 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
     .nis2-bright .cta:hover{background:#4DA3FF;color:#0D1B2A;transform:translateY(-1px)}
 
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-    .service{background:var(--secondary-color);border-radius:12px;padding:25px;box-shadow:0 6px 12px rgba(0,0,0,.5);transition:transform .3s,box-shadow .3s;border-top:4px solid var(--accent-color)}
+    .service{background:rgba(255,255,255,0.05);border-radius:12px;padding:25px;box-shadow:var(--shadow-1);transition:transform .3s,box-shadow .3s;border-top:4px solid var(--accent-color)}
     .service:hover{transform:translateY(-6px);box-shadow:0 12px 20px rgba(0,0,0,.8)}
     .service h3{margin-top:0;color:var(--light-color);font-size:1.2em;text-align:center}
     .service ul{margin-top:12px;padding-left:22px;color:var(--light-color)}
@@ -451,7 +453,7 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
     .about-list{list-style-type:disc;padding-left:40px;margin-top:20px;font-size:1.1em;line-height:1.8;color:var(--light-color)}
 
     .contact-info{margin-top:30px;text-align:center;font-size:1.05em;line-height:1.6;color:var(--light-color)}
-    form{display:flex;flex-direction:column;max-width:700px;margin:auto;background:var(--secondary-color);padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+    form{display:flex;flex-direction:column;max-width:700px;margin:auto;background:rgba(255,255,255,0.05);padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.5)}
     form input, form select, form textarea{margin-bottom:18px;padding:12px;border:1px solid #555;border-radius:6px;font-size:1em;background:#0D1B2A;color:#f5f5f5}
     form button{padding:14px;background:linear-gradient(90deg,var(--accent-color),var(--primary-color));color:white;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:1.1em;transition:background .3s}
     form button:hover{background:var(--accent-color);color:#0D1B2A}
@@ -466,7 +468,7 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
     .alert.err{background:#7a1f1f}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
   
-    .cidns-dropdown details{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;margin:10px 0}
+    .cidns-dropdown details{background:var(--surface-1);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;margin:10px 0}
     .cidns-dropdown summary{cursor:pointer;font-weight:600}
     .whyus-summary{display:flex;align-items:center;gap:10px;list-style:none}
     .whyus-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;opacity:.95}
@@ -500,7 +502,7 @@ array_unshift($t[$lang]['services'], [ $nis2['h'], $nis2['points'], $nis2['href'
   </nav>
 
   <div class="marquee-viewport" aria-label="CIDNS tagline">
-    <div class="marquee-track"><?= preg_replace('/(secure and agile Cloud|Cloud sécurisé et agile|veilige en flexibele Cloud)/i', '$1<br>', $t[$lang]['hero']) ?></div>
+    <div class="marquee-track"><?= preg_replace('/(End-to-End Cybersecurity & Cloud Services.|Services de cybersécurité et cloud de bout en bout.|End-to-End Cybersecurity- en Cloudservices.)/i', '$1<br>', $t[$lang]['hero']) ?></div>
   </div>
 
   <section id="Overview">
